@@ -13,6 +13,7 @@ npx cap sync
 
 <docgen-index>
 
+* [`init(...)`](#init)
 * [`track(...)`](#track)
 * [`identify(...)`](#identify)
 * [`alias(...)`](#alias)
@@ -25,6 +26,19 @@ npx cap sync
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### init(...)
+
+```typescript
+init(options: { token: string; }) => Promise<void>
+```
+
+| Param         | Type                            |
+| ------------- | ------------------------------- |
+| **`options`** | <code>{ token: string; }</code> |
+
+--------------------
+
 
 ### track(...)
 
