@@ -6,6 +6,26 @@ Capacitor plugin for Mixpanel
 
 ```bash
 npm install @houseninja/capacitor-mixpanel
+```
+
+Add the following plugin configuration:
+
+```json
+{
+ …
+  "plugins": {
+   "Mixpanel": {
+      "iosToken": "ios-xxx",
+      "androidToken": "android-yyy"
+    }
+  }
+…
+}
+```
+
+Sync capacitor configuration
+
+```bash
 npx cap sync
 ```
 
@@ -13,14 +33,17 @@ npx cap sync
 
 <docgen-index>
 
-* [`init(...)`](#init)
-* [`track(...)`](#track)
-* [`identify(...)`](#identify)
-* [`alias(...)`](#alias)
-* [`reset()`](#reset)
-* [`clearSuperProperties()`](#clearsuperproperties)
-* [`currentSuperProperties()`](#currentsuperproperties)
-* [`registerSuperProperties(...)`](#registersuperproperties)
+- [@houseninja/capacitor-mixpanel](#houseninjacapacitor-mixpanel)
+  - [Install](#install)
+  - [API](#api)
+    - [init(...)](#init)
+    - [track(...)](#track)
+    - [identify(...)](#identify)
+    - [alias(...)](#alias)
+    - [reset()](#reset)
+    - [clearSuperProperties()](#clearsuperproperties)
+    - [currentSuperProperties()](#currentsuperproperties)
+    - [registerSuperProperties(...)](#registersuperproperties)
 
 </docgen-index>
 
