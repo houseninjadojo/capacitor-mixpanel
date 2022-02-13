@@ -25,7 +25,9 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "mixpanel",
+    "houseninja"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
@@ -51,6 +53,7 @@
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
+    "@types/mixpanel-browser": "^2.38.0",
     "eslint": "^7.11.0",
     "prettier": "~2.2.0",
     "prettier-plugin-java": "~1.0.0",
@@ -74,5 +77,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "dependencies": {
+    "mixpanel-browser": "^2.43.0"
   }
 }

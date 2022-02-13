@@ -13,24 +13,96 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`track(...)`](#track)
+* [`identify(...)`](#identify)
+* [`alias(...)`](#alias)
+* [`reset()`](#reset)
+* [`clearSuperProperties()`](#clearsuperproperties)
+* [`currentSuperProperties()`](#currentsuperproperties)
+* [`registerSuperProperties(...)`](#registersuperproperties)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### track(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+track(options: { event: string; properties: any; }) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                                             |
+| ------------- | ------------------------------------------------ |
+| **`options`** | <code>{ event: string; properties: any; }</code> |
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+--------------------
+
+
+### identify(...)
+
+```typescript
+identify(options: { distinctId: string; }) => Promise<void>
+```
+
+| Param         | Type                                 |
+| ------------- | ------------------------------------ |
+| **`options`** | <code>{ distinctId: string; }</code> |
+
+--------------------
+
+
+### alias(...)
+
+```typescript
+alias(options: { alias: string; distinctId: string; }) => Promise<void>
+```
+
+| Param         | Type                                                |
+| ------------- | --------------------------------------------------- |
+| **`options`** | <code>{ alias: string; distinctId: string; }</code> |
+
+--------------------
+
+
+### reset()
+
+```typescript
+reset() => Promise<void>
+```
+
+--------------------
+
+
+### clearSuperProperties()
+
+```typescript
+clearSuperProperties() => Promise<void>
+```
+
+--------------------
+
+
+### currentSuperProperties()
+
+```typescript
+currentSuperProperties() => Promise<{ properties: any; }>
+```
+
+**Returns:** <code>Promise&lt;{ properties: any; }&gt;</code>
+
+--------------------
+
+
+### registerSuperProperties(...)
+
+```typescript
+registerSuperProperties(options: { properties: any; }) => Promise<void>
+```
+
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ properties: any; }</code> |
 
 --------------------
 
