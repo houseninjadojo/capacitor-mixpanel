@@ -39,6 +39,7 @@ public class MixpanelPlugin extends Plugin {
     public void identify(PluginCall call) {
         String distinctId = call.getString("distinctId");
         mixpanel.identify(distinctId);
+        mixpanel.getPeople().identify(distinctId);
         call.resolve();
     }
 
@@ -74,6 +75,21 @@ public class MixpanelPlugin extends Plugin {
     public void registerSuperProperties(PluginCall call) {
         JSObject properties = call.getObject("properties");
         mixpanel.registerSuperProperties(properties);
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void setProfile(PluginCall call) {
+        JSObject properties = call.getObject("properties");
+        mixpanel.getPeople().set(properties);
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void trackCharge(PluginCall call) {
+        double amount = call.getDouble("amount");
+        JSObject properties = call.getObject("properties");
+        mixpanel.getPeople().trackCharge(amount, properties);
         call.resolve();
     }
 }

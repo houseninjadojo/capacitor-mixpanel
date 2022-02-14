@@ -41,6 +41,8 @@ npx cap sync
 * [`clearSuperProperties()`](#clearsuperproperties)
 * [`currentSuperProperties()`](#currentsuperproperties)
 * [`registerSuperProperties(...)`](#registersuperproperties)
+* [`setProfile(...)`](#setprofile)
+* [`trackCharge(...)`](#trackcharge)
 
 </docgen-index>
 
@@ -137,6 +139,32 @@ registerSuperProperties(options: { properties: any; }) => Promise<void>
 | Param         | Type                              |
 | ------------- | --------------------------------- |
 | **`options`** | <code>{ properties: any; }</code> |
+
+--------------------
+
+
+### setProfile(...)
+
+```typescript
+setProfile(options: { properties: any; }) => Promise<void>
+```
+
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ properties: any; }</code> |
+
+--------------------
+
+
+### trackCharge(...)
+
+```typescript
+trackCharge(options: { amount: number; properties: any; }) => Promise<void>
+```
+
+| Param         | Type                                              |
+| ------------- | ------------------------------------------------- |
+| **`options`** | <code>{ amount: number; properties: any; }</code> |
 
 --------------------
 

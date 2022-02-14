@@ -63,4 +63,13 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     mixpanel.register(options.properties);
     return Promise.resolve();
   }
+
+  async setProfile(options: { properties: any }): Promise<void> {
+    mixpanel.people.set(options.properties);
+    return Promise.resolve();
+  }
+
+  async trackCharge(options: { amount: number, properties: any }): Promise<void> {
+    mixpanel.people.track_charge(options.amount, options.properties);
+  }
 }

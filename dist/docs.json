@@ -114,6 +114,38 @@
         "docs": "",
         "complexTypes": [],
         "slug": "registersuperproperties"
+      },
+      {
+        "name": "setProfile",
+        "signature": "(options: { properties: any; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ properties: any; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setprofile"
+      },
+      {
+        "name": "trackCharge",
+        "signature": "(options: { amount: number; properties: any; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ amount: number; properties: any; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "trackcharge"
       }
     ],
     "properties": []

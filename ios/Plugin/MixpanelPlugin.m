@@ -12,4 +12,6 @@ CAP_PLUGIN(MixpanelPlugin, "Mixpanel",
            CAP_PLUGIN_METHOD(clearSuperProperties, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(currentSuperProperties, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(registerSuperProperties, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setProfile, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(trackCharge, CAPPluginReturnPromise);
 )

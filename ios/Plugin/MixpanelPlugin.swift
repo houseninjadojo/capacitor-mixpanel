@@ -20,7 +20,7 @@ public class MixpanelPlugin: CAPPlugin {
     @objc func track(_ call: CAPPluginCall) {
         let event = call.getString("event") ?? ""
         let properties = call.getObject("properties") ?? [:]
-        Mixpanel.mainInstance().track(event, properties)
+        Mixpanel.mainInstance().track(event: event, properties: properties)
         call.resolve()
     }
 
@@ -33,7 +33,7 @@ public class MixpanelPlugin: CAPPlugin {
     @objc func alias(_ call: CAPPluginCall) {
         let alias = call.getString("alias") ?? ""
         let distinctId = call.getString("distinctId") ?? ""
-        Mixpanel.mainInstance().createAlias(alias, distinctId)
+        Mixpanel.mainInstance().createAlias(alias, distinctId: distinctId)
         call.resolve()
     }
 
@@ -57,6 +57,18 @@ public class MixpanelPlugin: CAPPlugin {
     @objc func registerSuperProperties(_ call: CAPPluginCall) {
         let properties = call.getObject("properties") ?? [:]
         Mixpanel.mainInstance().registerSuperProperties(properties)
+        call.resolve()
+    }
+
+    @objc func setProfile(_ call: CAPPluginCall) {
+        let properties = call.getObject("properties") ?? [:]
+        Mixpanel.mainInstance().people.set(properties: properties)
+        call.resolve()
+    }
+
+    @objc func setProfile(_ call: CAPPluginCall) {
+        let amount = call.getNumber("amount") ?? [:]
+        Mixpanel.mainInstance().people.trackCharge(amount: amount)
         call.resolve()
     }
 }

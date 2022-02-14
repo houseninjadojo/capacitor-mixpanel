@@ -58,6 +58,13 @@ class MixpanelWeb extends core.WebPlugin {
         mixpanel__default["default"].register(options.properties);
         return Promise.resolve();
     }
+    async setProfile(options) {
+        mixpanel__default["default"].people.set(options.properties);
+        return Promise.resolve();
+    }
+    async trackCharge(options) {
+        mixpanel__default["default"].people.track_charge(options.amount, options.properties);
+    }
 }
 
 var web = /*#__PURE__*/Object.freeze({

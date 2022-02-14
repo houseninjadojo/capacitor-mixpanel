@@ -22,4 +22,11 @@ export interface MixpanelPlugin {
     registerSuperProperties(options: {
         properties: any;
     }): Promise<void>;
+    setProfile(options: {
+        properties: any;
+    }): Promise<void>;
+    trackCharge(options: {
+        amount: number;
+        properties: any;
+    }): Promise<void>;
 }

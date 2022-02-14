@@ -45,5 +45,12 @@ export class MixpanelWeb extends WebPlugin {
         mixpanel.register(options.properties);
         return Promise.resolve();
     }
+    async setProfile(options) {
+        mixpanel.people.set(options.properties);
+        return Promise.resolve();
+    }
+    async trackCharge(options) {
+        mixpanel.people.track_charge(options.amount, options.properties);
+    }
 }
 //# sourceMappingURL=web.js.map
