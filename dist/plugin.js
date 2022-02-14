@@ -15,32 +15,32 @@ var capacitorMixpanel = (function (exports, core, mixpanel) {
                 name: 'Mixpanel',
                 platforms: ['web'],
             });
-            this.mixpanel = mixpanel__default["default"];
             this.superProperties = {};
+            window.mixpanel = mixpanel__default["default"];
         }
         async init(options) {
-            this.mixpanel.init(options.token, { debug: true });
+            mixpanel__default["default"].init(options.token, { debug: true });
             return Promise.resolve();
         }
         async track(options) {
-            this.mixpanel.track(options.event, options.properties);
+            mixpanel__default["default"].track(options.event, options.properties);
             return Promise.resolve();
         }
         async identify(options) {
-            this.mixpanel.identify(options.distinctId);
+            mixpanel__default["default"].identify(options.distinctId);
             return Promise.resolve();
         }
         async alias(options) {
-            this.mixpanel.alias(options.alias, options.distinctId);
+            mixpanel__default["default"].alias(options.alias, options.distinctId);
             return Promise.resolve();
         }
         async reset() {
-            this.mixpanel.reset();
+            mixpanel__default["default"].reset();
             return Promise.resolve();
         }
         async clearSuperProperties() {
             for (const k of Object.keys(this.superProperties)) {
-                this.mixpanel.unregister(k);
+                mixpanel__default["default"].unregister(k);
             }
             this.superProperties = {};
             return Promise.resolve();
@@ -51,7 +51,7 @@ var capacitorMixpanel = (function (exports, core, mixpanel) {
             });
         }
         async registerSuperProperties(options) {
-            this.mixpanel.register(options.properties);
+            mixpanel__default["default"].register(options.properties);
             return Promise.resolve();
         }
     }

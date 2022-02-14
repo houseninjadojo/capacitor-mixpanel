@@ -1,7 +1,11 @@
 import { WebPlugin } from '@capacitor/core';
 import type { MixpanelPlugin } from './definitions';
+declare global {
+    interface Window {
+        mixpanel: any;
+    }
+}
 export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
-    private mixpanel;
     private superProperties;
     constructor();
     init(options: {

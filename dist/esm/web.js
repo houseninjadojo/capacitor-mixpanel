@@ -6,32 +6,32 @@ export class MixpanelWeb extends WebPlugin {
             name: 'Mixpanel',
             platforms: ['web'],
         });
-        this.mixpanel = mixpanel;
         this.superProperties = {};
+        window.mixpanel = mixpanel;
     }
     async init(options) {
-        this.mixpanel.init(options.token, { debug: true });
+        mixpanel.init(options.token, { debug: true });
         return Promise.resolve();
     }
     async track(options) {
-        this.mixpanel.track(options.event, options.properties);
+        mixpanel.track(options.event, options.properties);
         return Promise.resolve();
     }
     async identify(options) {
-        this.mixpanel.identify(options.distinctId);
+        mixpanel.identify(options.distinctId);
         return Promise.resolve();
     }
     async alias(options) {
-        this.mixpanel.alias(options.alias, options.distinctId);
+        mixpanel.alias(options.alias, options.distinctId);
         return Promise.resolve();
     }
     async reset() {
-        this.mixpanel.reset();
+        mixpanel.reset();
         return Promise.resolve();
     }
     async clearSuperProperties() {
         for (const k of Object.keys(this.superProperties)) {
-            this.mixpanel.unregister(k);
+            mixpanel.unregister(k);
         }
         this.superProperties = {};
         return Promise.resolve();
@@ -42,7 +42,7 @@ export class MixpanelWeb extends WebPlugin {
         });
     }
     async registerSuperProperties(options) {
-        this.mixpanel.register(options.properties);
+        mixpanel.register(options.properties);
         return Promise.resolve();
     }
 }
