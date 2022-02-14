@@ -19,9 +19,10 @@ public class MixpanelPlugin: CAPPlugin {
 
     @objc func track(_ call: CAPPluginCall) {
         let event = call.getString("event") ?? ""
-        let properties = call.getObject("properties")!
-        let mixpanelProperties: [String: String] = properties.mapValues { $0 as! String }
-        Mixpanel.mainInstance().track(event: event, properties: mixpanelProperties)
+        guard let properties = call.getObject("properties") as! Dictionary<String,String>? else {
+            return
+        }
+        Mixpanel.mainInstance().track(event: event, properties: properties)
         call.resolve()
     }
 
@@ -56,16 +57,18 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func registerSuperProperties(_ call: CAPPluginCall) {
-        let properties = call.getObject("properties")!
-        let mixpanelProperties: [String: String] = properties.mapValues { $0 as! String }
-        Mixpanel.mainInstance().registerSuperProperties(mixpanelProperties)
+        guard let properties = call.getObject("properties") as! Dictionary<String,String>? else {
+            return
+        }
+        Mixpanel.mainInstance().registerSuperProperties(properties)
         call.resolve()
     }
 
     @objc func setProfile(_ call: CAPPluginCall) {
-        let properties = call.getObject("properties")!
-        let mixpanelProperties: [String: String] = properties.mapValues { $0 as! String }
-        Mixpanel.mainInstance().people.set(properties: mixpanelProperties)
+        guard let properties = call.getObject("properties") as! Dictionary<String,String>? else {
+            return
+        }
+        Mixpanel.mainInstance().people.set(properties: properties)
         call.resolve()
     }
 
