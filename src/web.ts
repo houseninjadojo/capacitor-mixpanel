@@ -20,7 +20,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     window.mixpanel = mixpanel;
   }
 
-  async init(options: { token: string, debug: boolean }): Promise<void> {
+  async initialize(options: { token: string, debug: boolean }): Promise<void> {
     mixpanel.init(options.token, { debug: options.debug });
     return Promise.resolve();
   }

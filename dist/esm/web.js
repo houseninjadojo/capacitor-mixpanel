@@ -9,7 +9,7 @@ export class MixpanelWeb extends WebPlugin {
         this.superProperties = {};
         window.mixpanel = mixpanel;
     }
-    async init(options) {
+    async initialize(options) {
         mixpanel.init(options.token, { debug: options.debug });
         return Promise.resolve();
     }

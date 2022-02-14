@@ -22,7 +22,7 @@ class MixpanelWeb extends core.WebPlugin {
         this.superProperties = {};
         window.mixpanel = mixpanel__default["default"];
     }
-    async init(options) {
+    async initialize(options) {
         mixpanel__default["default"].init(options.token, { debug: options.debug });
         return Promise.resolve();
     }

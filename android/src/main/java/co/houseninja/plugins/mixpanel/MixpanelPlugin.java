@@ -23,7 +23,7 @@ public class MixpanelPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void init(PluginCall call) {
+    public void initialize(PluginCall call) {
         call.unimplemented("Not implemented on Android. Mixpanel is initialized automatically.");
     }
 

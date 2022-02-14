@@ -13,20 +13,21 @@ public class MixpanelPlugin: CAPPlugin {
         Mixpanel.initialize(token: token)
     }
 
-    @objc func init(_ call: CAPPluginCall) {
-        call.unimplemented("Not implemented on Android. Mixpanel is initialized automatically.")
+    @objc func initialize(_ call: CAPPluginCall) {
+        call.unimplemented("Not implemented on iOS. Mixpanel is initialized automatically.")
     }
 
     @objc func track(_ call: CAPPluginCall) {
         let event = call.getString("event") ?? ""
-        let properties = call.getObject("properties") ?? [:]
-        Mixpanel.mainInstance().track(event: event, properties: properties)
+        let properties = call.getObject("properties")!
+        let mixpanelProperties: [String: String] = properties.mapValues { $0 as! String }
+        Mixpanel.mainInstance().track(event: event, properties: mixpanelProperties)
         call.resolve()
     }
 
     @objc func identify(_ call: CAPPluginCall) {
         let distinctId = call.getString("distinctId") ?? ""
-        Mixpanel.mainInstance().identify(distinctId)
+        Mixpanel.mainInstance().identify(distinctId: distinctId)
         call.resolve()
     }
 
@@ -55,19 +56,21 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func registerSuperProperties(_ call: CAPPluginCall) {
-        let properties = call.getObject("properties") ?? [:]
-        Mixpanel.mainInstance().registerSuperProperties(properties)
+        let properties = call.getObject("properties")!
+        let mixpanelProperties: [String: String] = properties.mapValues { $0 as! String }
+        Mixpanel.mainInstance().registerSuperProperties(mixpanelProperties)
         call.resolve()
     }
 
     @objc func setProfile(_ call: CAPPluginCall) {
-        let properties = call.getObject("properties") ?? [:]
-        Mixpanel.mainInstance().people.set(properties: properties)
+        let properties = call.getObject("properties")!
+        let mixpanelProperties: [String: String] = properties.mapValues { $0 as! String }
+        Mixpanel.mainInstance().people.set(properties: mixpanelProperties)
         call.resolve()
     }
 
-    @objc func setProfile(_ call: CAPPluginCall) {
-        let amount = call.getNumber("amount") ?? [:]
+    @objc func trackCharge(_ call: CAPPluginCall) {
+        let amount: Double = call.getDouble("amount")!
         Mixpanel.mainInstance().people.trackCharge(amount: amount)
         call.resolve()
     }

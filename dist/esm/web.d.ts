@@ -8,7 +8,7 @@ declare global {
 export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     private superProperties;
     constructor();
-    init(options: {
+    initialize(options: {
         token: string;
         debug: boolean;
     }): Promise<void>;

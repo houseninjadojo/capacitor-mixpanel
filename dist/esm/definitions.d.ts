@@ -1,5 +1,5 @@
 export interface MixpanelPlugin {
-    init(options: {
+    initialize(options: {
         token: string;
         debug: boolean;
     }): Promise<void>;

@@ -6,7 +6,7 @@
     "tags": [],
     "methods": [
       {
-        "name": "init",
+        "name": "initialize",
         "signature": "(options: { token: string; debug: boolean; }) => Promise<void>",
         "parameters": [
           {
@@ -19,7 +19,7 @@
         "tags": [],
         "docs": "",
         "complexTypes": [],
-        "slug": "init"
+        "slug": "initialize"
       },
       {
         "name": "track",
