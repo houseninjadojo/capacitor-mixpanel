@@ -1,0 +1,125 @@
+{
+  "api": {
+    "name": "MixpanelPlugin",
+    "slug": "mixpanelplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "init",
+        "signature": "(options: { token: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ token: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "init"
+      },
+      {
+        "name": "track",
+        "signature": "(options: { event: string; properties: any; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ event: string; properties: any; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "track"
+      },
+      {
+        "name": "identify",
+        "signature": "(options: { distinctId: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ distinctId: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "identify"
+      },
+      {
+        "name": "alias",
+        "signature": "(options: { alias: string; distinctId: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ alias: string; distinctId: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "alias"
+      },
+      {
+        "name": "reset",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "reset"
+      },
+      {
+        "name": "clearSuperProperties",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "clearsuperproperties"
+      },
+      {
+        "name": "currentSuperProperties",
+        "signature": "() => Promise<{ properties: any; }>",
+        "parameters": [],
+        "returns": "Promise<{ properties: any; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "currentsuperproperties"
+      },
+      {
+        "name": "registerSuperProperties",
+        "signature": "(options: { properties: any; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ properties: any; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "registersuperproperties"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}

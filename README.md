@@ -33,17 +33,14 @@ npx cap sync
 
 <docgen-index>
 
-- [@houseninja/capacitor-mixpanel](#houseninjacapacitor-mixpanel)
-  - [Install](#install)
-  - [API](#api)
-    - [init(...)](#init)
-    - [track(...)](#track)
-    - [identify(...)](#identify)
-    - [alias(...)](#alias)
-    - [reset()](#reset)
-    - [clearSuperProperties()](#clearsuperproperties)
-    - [currentSuperProperties()](#currentsuperproperties)
-    - [registerSuperProperties(...)](#registersuperproperties)
+* [`init(...)`](#init)
+* [`track(...)`](#track)
+* [`identify(...)`](#identify)
+* [`alias(...)`](#alias)
+* [`reset()`](#reset)
+* [`clearSuperProperties()`](#clearsuperproperties)
+* [`currentSuperProperties()`](#currentsuperproperties)
+* [`registerSuperProperties(...)`](#registersuperproperties)
 
 </docgen-index>
 
