@@ -15,7 +15,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
   }
 
   async init(options: { token: string }): Promise<void> {
-    this.mixpanel.init(options.token);
+    this.mixpanel.init(options.token, { debug: true });
     return Promise.resolve();
   }
 
