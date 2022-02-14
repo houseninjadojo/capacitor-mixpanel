@@ -87,7 +87,7 @@ public class MixpanelPlugin extends Plugin {
 
     @PluginMethod
     public void trackCharge(PluginCall call) {
-        double amount = call.getDouble("amount");
+        Double amount = call.getDouble("amount");
         JSObject properties = call.getObject("properties");
         mixpanel.getPeople().trackCharge(amount, properties);
         call.resolve();
