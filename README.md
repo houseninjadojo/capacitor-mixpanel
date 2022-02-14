@@ -50,12 +50,12 @@ npx cap sync
 ### init(...)
 
 ```typescript
-init(options: { token: string; }) => Promise<void>
+init(options: { token: string; debug: boolean; }) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ token: string; }</code> |
+| Param         | Type                                            |
+| ------------- | ----------------------------------------------- |
+| **`options`** | <code>{ token: string; debug: boolean; }</code> |
 
 --------------------
 

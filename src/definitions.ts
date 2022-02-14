@@ -1,5 +1,5 @@
 export interface MixpanelPlugin {
-  init(options: { token: string }): Promise<void>;
+  init(options: { token: string, debug: boolean }): Promise<void>;
   track(options: { event: string, properties: any }): Promise<void>;
   identify(options: { distinctId: string }): Promise<void>;
   alias(options: { alias: string, distinctId: string }): Promise<void>;

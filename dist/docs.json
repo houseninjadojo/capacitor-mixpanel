@@ -7,12 +7,12 @@
     "methods": [
       {
         "name": "init",
-        "signature": "(options: { token: string; }) => Promise<void>",
+        "signature": "(options: { token: string; debug: boolean; }) => Promise<void>",
         "parameters": [
           {
             "name": "options",
             "docs": "",
-            "type": "{ token: string; }"
+            "type": "{ token: string; debug: boolean; }"
           }
         ],
         "returns": "Promise<void>",

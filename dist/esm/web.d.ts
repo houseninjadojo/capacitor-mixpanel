@@ -10,6 +10,7 @@ export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     constructor();
     init(options: {
         token: string;
+        debug: boolean;
     }): Promise<void>;
     track(options: {
         event: string;

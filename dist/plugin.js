@@ -19,7 +19,7 @@ var capacitorMixpanel = (function (exports, core, mixpanel) {
             window.mixpanel = mixpanel__default["default"];
         }
         async init(options) {
-            mixpanel__default["default"].init(options.token, { debug: true });
+            mixpanel__default["default"].init(options.token, { debug: options.debug });
             return Promise.resolve();
         }
         async track(options) {
