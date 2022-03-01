@@ -2,10 +2,7 @@ import { WebPlugin } from '@capacitor/core';
 import mixpanel from 'mixpanel-browser';
 export class MixpanelWeb extends WebPlugin {
     constructor() {
-        super({
-            name: 'Mixpanel',
-            platforms: ['web'],
-        });
+        super();
         this.superProperties = {};
         window.mixpanel = mixpanel;
     }
