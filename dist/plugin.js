@@ -11,10 +11,7 @@ var capacitorMixpanel = (function (exports, core, mixpanel) {
 
     class MixpanelWeb extends core.WebPlugin {
         constructor() {
-            super({
-                name: 'Mixpanel',
-                platforms: ['web'],
-            });
+            super();
             this.superProperties = {};
             window.mixpanel = mixpanel__default["default"];
         }

@@ -13,10 +13,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
   private superProperties = {};
 
   constructor() {
-    super({
-      name: 'Mixpanel',
-      platforms: ['web'],
-    });
+    super();
     window.mixpanel = mixpanel;
   }
 
