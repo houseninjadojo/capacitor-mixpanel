@@ -57,7 +57,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func registerSuperProperties(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,String>? else {
+        guard let properties = call.getObject("properties") as? Dictionary<String,MixpanelType>? else {
             return
         }
         Mixpanel.mainInstance().registerSuperProperties(properties)
@@ -65,7 +65,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func setProfile(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,String>? else {
+        guard let properties = call.getObject("properties") as? Dictionary<String,MixpanelType>? else {
             return
         }
         Mixpanel.mainInstance().people.set(properties: properties)
