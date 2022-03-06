@@ -6,6 +6,8 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
+import org.json.JSONObject;
+
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 @CapacitorPlugin(name = "Mixpanel")
@@ -14,9 +16,8 @@ public class MixpanelPlugin extends Plugin {
 
     @Override
     public void load() {
-        CapConfig config = this.bridge.getConfig();
-        String token = config.getPluginConfiguration("Mixpanel").getString("androidToken");
-        mixpanel = MixpanelAPI.getInstance(this, token);
+        String token = getConfig().getString("androidToken");
+        mixpanel = MixpanelAPI.getInstance(getContext(), token);
 
         // load parent
         super.load();
@@ -65,7 +66,7 @@ public class MixpanelPlugin extends Plugin {
 
     @PluginMethod
     public void currentSuperProperties(PluginCall call) {
-        JSObject properties = mixpanel.getSuperProperties();
+        JSONObject properties = mixpanel.getSuperProperties();
         JSObject ret = new JSObject();
         ret.put("properties", properties);
         call.resolve(ret);
