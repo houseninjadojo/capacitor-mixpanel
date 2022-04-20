@@ -23,6 +23,9 @@ class MixpanelWeb extends core.WebPlugin {
         mixpanel__default["default"].init(options.token, { debug: options.debug });
         return Promise.resolve();
     }
+    async distinctId() {
+        return Promise.resolve({ value: mixpanel__default["default"].get_distinct_id() });
+    }
     async track(options) {
         mixpanel__default["default"].track(options.event, options.properties);
         return Promise.resolve();
@@ -59,8 +62,15 @@ class MixpanelWeb extends core.WebPlugin {
         mixpanel__default["default"].people.set(options.properties);
         return Promise.resolve();
     }
+    async setProfileUnion(options) {
+        mixpanel__default["default"].people.union(options.properties);
+        return Promise.resolve();
+    }
     async trackCharge(options) {
         mixpanel__default["default"].people.track_charge(options.amount, options.properties);
+    }
+    async flush() {
+        // NOT IMPLEMENTED FOR WEB
     }
 }
 

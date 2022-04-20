@@ -34,6 +34,7 @@ npx cap sync
 <docgen-index>
 
 * [`initialize(...)`](#initialize)
+* [`distinctId()`](#distinctid)
 * [`track(...)`](#track)
 * [`identify(...)`](#identify)
 * [`alias(...)`](#alias)
@@ -42,7 +43,9 @@ npx cap sync
 * [`currentSuperProperties()`](#currentsuperproperties)
 * [`registerSuperProperties(...)`](#registersuperproperties)
 * [`setProfile(...)`](#setprofile)
+* [`setProfileUnion(...)`](#setprofileunion)
 * [`trackCharge(...)`](#trackcharge)
+* [`flush()`](#flush)
 
 </docgen-index>
 
@@ -58,6 +61,17 @@ initialize(options: { token: string; debug: boolean; }) => Promise<void>
 | Param         | Type                                            |
 | ------------- | ----------------------------------------------- |
 | **`options`** | <code>{ token: string; debug: boolean; }</code> |
+
+--------------------
+
+
+### distinctId()
+
+```typescript
+distinctId() => Promise<{ value: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -156,6 +170,19 @@ setProfile(options: { properties: any; }) => Promise<void>
 --------------------
 
 
+### setProfileUnion(...)
+
+```typescript
+setProfileUnion(options: { properties: any; }) => Promise<void>
+```
+
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ properties: any; }</code> |
+
+--------------------
+
+
 ### trackCharge(...)
 
 ```typescript
@@ -165,6 +192,15 @@ trackCharge(options: { amount: number; properties: any; }) => Promise<void>
 | Param         | Type                                              |
 | ------------- | ------------------------------------------------- |
 | **`options`** | <code>{ amount: number; properties: any; }</code> |
+
+--------------------
+
+
+### flush()
+
+```typescript
+flush() => Promise<void>
+```
 
 --------------------
 

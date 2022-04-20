@@ -3,6 +3,9 @@ export interface MixpanelPlugin {
         token: string;
         debug: boolean;
     }): Promise<void>;
+    distinctId(): Promise<{
+        value: string;
+    }>;
     track(options: {
         event: string;
         properties: any;
@@ -25,8 +28,12 @@ export interface MixpanelPlugin {
     setProfile(options: {
         properties: any;
     }): Promise<void>;
+    setProfileUnion(options: {
+        properties: any;
+    }): Promise<void>;
     trackCharge(options: {
         amount: number;
         properties: any;
     }): Promise<void>;
+    flush(): Promise<void>;
 }

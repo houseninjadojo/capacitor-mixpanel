@@ -21,6 +21,10 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     mixpanel.init(options.token, { debug: options.debug });
     return Promise.resolve();
   }
+  
+  async distinctId(): Promise<{value: string}> {
+    return Promise.resolve({ value: mixpanel.get_distinct_id() });
+  }
 
   async track(options: { event: string, properties: any }): Promise<void> {
     mixpanel.track(options.event, options.properties);
@@ -65,8 +69,17 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     mixpanel.people.set(options.properties);
     return Promise.resolve();
   }
+  
+  async setProfileUnion(options: { properties: any }): Promise<void> {
+    mixpanel.people.union(options.properties);
+    return Promise.resolve();
+  }
 
   async trackCharge(options: { amount: number, properties: any }): Promise<void> {
     mixpanel.people.track_charge(options.amount, options.properties);
+  }
+
+  async flush(): Promise<void> {
+    // NOT IMPLEMENTED FOR WEB
   }
 }

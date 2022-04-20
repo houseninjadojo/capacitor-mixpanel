@@ -9,10 +9,10 @@ end
 
 target 'Plugin' do
   capacitor_pods
-  pod 'Mixpanel-swift'
+  pod 'Mixpanel-swift', '~> 3.2'
 end
 
 target 'PluginTests' do
   capacitor_pods
-  pod 'Mixpanel-swift'
+  pod 'Mixpanel-swift', '~> 3.2'
 end
