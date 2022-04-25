@@ -13,7 +13,6 @@ import org.json.JSONObject;
 
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 @CapacitorPlugin(name = "Mixpanel")
@@ -23,7 +22,13 @@ public class MixpanelPlugin extends Plugin {
     @Override
     public void load() {
         String token = getConfig().getString("androidToken");
+        String serverUrl = getConfig().getString("serverUrl");
+
         mixpanel = MixpanelAPI.getInstance(getContext(), token);
+
+        if (serverUrl != null) {
+          mixpanel.setServerURL(serverUrl);
+        }
 
         // load parent
         super.load();
@@ -54,6 +59,7 @@ public class MixpanelPlugin extends Plugin {
     public void identify(PluginCall call) {
         String distinctId = call.getString("distinctId");
         mixpanel.identify(distinctId);
+        mixpanel.getPeople().identify(distinctId);
         call.resolve();
     }
 
