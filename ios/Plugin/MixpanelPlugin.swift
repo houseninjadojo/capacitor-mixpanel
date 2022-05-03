@@ -10,11 +10,18 @@ import Mixpanel
 public class MixpanelPlugin: CAPPlugin {
     public override func load() {
         let token = getConfigValue("iosToken") as? String ?? "ADD_IN_CAPACITOR_CONFIG_JSON"
-        Mixpanel.initialize(token: token)
+        let serverURL = getConfigValue("serverUrl") as? String ?? nil
+
+        Mixpanel.initialize(token: token, serverURL: serverURL)
     }
 
     @objc func initialize(_ call: CAPPluginCall) {
         call.unimplemented("Not implemented on iOS. Mixpanel is initialized automatically.")
+    }
+    
+    @objc func distinctId(_ call: CAPPluginCall) {
+        let distinctId = Mixpanel.mainInstance().distinctId
+        call.resolve([ "value": distinctId ]);
     }
 
     @objc func track(_ call: CAPPluginCall) {
@@ -71,10 +78,22 @@ public class MixpanelPlugin: CAPPlugin {
         Mixpanel.mainInstance().people.set(properties: properties)
         call.resolve()
     }
+    
+    @objc func setProfileUnion(_ call: CAPPluginCall) {
+        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+            return
+        }
+        Mixpanel.mainInstance().people.union(properties: properties)
+        call.resolve()
+    }
 
     @objc func trackCharge(_ call: CAPPluginCall) {
         let amount: Double = call.getDouble("amount")!
         Mixpanel.mainInstance().people.trackCharge(amount: amount)
         call.resolve()
+    }
+
+    @objc func flush(_ call: CAPPluginCall) {
+        Mixpanel.mainInstance().flush(completion: call.resolve)
     }
 }

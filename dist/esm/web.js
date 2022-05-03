@@ -10,6 +10,9 @@ export class MixpanelWeb extends WebPlugin {
         mixpanel.init(options.token, { debug: options.debug });
         return Promise.resolve();
     }
+    async distinctId() {
+        return Promise.resolve({ value: mixpanel.get_distinct_id() });
+    }
     async track(options) {
         mixpanel.track(options.event, options.properties);
         return Promise.resolve();
@@ -46,8 +49,15 @@ export class MixpanelWeb extends WebPlugin {
         mixpanel.people.set(options.properties);
         return Promise.resolve();
     }
+    async setProfileUnion(options) {
+        mixpanel.people.union(options.properties);
+        return Promise.resolve();
+    }
     async trackCharge(options) {
         mixpanel.people.track_charge(options.amount, options.properties);
+    }
+    async flush() {
+        // NOT IMPLEMENTED FOR WEB
     }
 }
 //# sourceMappingURL=web.js.map

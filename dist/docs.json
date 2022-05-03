@@ -22,6 +22,16 @@
         "slug": "initialize"
       },
       {
+        "name": "distinctId",
+        "signature": "() => Promise<{ value: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ value: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "distinctid"
+      },
+      {
         "name": "track",
         "signature": "(options: { event: string; properties: any; }) => Promise<void>",
         "parameters": [
@@ -132,6 +142,22 @@
         "slug": "setprofile"
       },
       {
+        "name": "setProfileUnion",
+        "signature": "(options: { properties: any; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ properties: any; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setprofileunion"
+      },
+      {
         "name": "trackCharge",
         "signature": "(options: { amount: number; properties: any; }) => Promise<void>",
         "parameters": [
@@ -146,6 +172,16 @@
         "docs": "",
         "complexTypes": [],
         "slug": "trackcharge"
+      },
+      {
+        "name": "flush",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "flush"
       }
     ],
     "properties": []

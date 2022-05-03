@@ -1,14 +1,19 @@
 package co.houseninja.plugins.mixpanel;
 
+import android.util.Log;
+
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import java.util.Iterator;
 
 @CapacitorPlugin(name = "Mixpanel")
 public class MixpanelPlugin extends Plugin {
@@ -17,7 +22,13 @@ public class MixpanelPlugin extends Plugin {
     @Override
     public void load() {
         String token = getConfig().getString("androidToken");
+        String serverUrl = getConfig().getString("serverUrl");
+
         mixpanel = MixpanelAPI.getInstance(getContext(), token);
+
+        if (serverUrl != null) {
+          mixpanel.setServerURL(serverUrl);
+        }
 
         // load parent
         super.load();
@@ -26,6 +37,14 @@ public class MixpanelPlugin extends Plugin {
     @PluginMethod
     public void initialize(PluginCall call) {
         call.unimplemented("Not implemented on Android. Mixpanel is initialized automatically.");
+    }
+
+    @PluginMethod
+    public void distinctId(PluginCall call) {
+        String distinctId = mixpanel.getDistinctId();
+        JSObject ret = new JSObject();
+        ret.put("value", distinctId);
+        call.resolve(ret);
     }
 
     @PluginMethod
@@ -87,10 +106,28 @@ public class MixpanelPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void setProfileUnion(PluginCall call) {
+        JSObject properties = call.getObject("properties");
+        Iterator<String> keys = properties.keys();
+        while (keys.hasNext()){
+            String key = keys.next();
+            JSONArray values = properties.optJSONArray(key);
+            mixpanel.getPeople().union(key, values);
+        }
+        call.resolve();
+    }
+
+    @PluginMethod
     public void trackCharge(PluginCall call) {
         Double amount = call.getDouble("amount");
         JSObject properties = call.getObject("properties");
         mixpanel.getPeople().trackCharge(amount, properties);
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void flush(PluginCall call) {
+        mixpanel.flush();
         call.resolve();
     }
 }
