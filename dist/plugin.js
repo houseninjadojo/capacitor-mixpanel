@@ -16,7 +16,7 @@ var capacitorMixpanel = (function (exports, core, mixpanel) {
             window.mixpanel = mixpanel__default["default"];
         }
         async initialize(options) {
-            mixpanel__default["default"].init(options.token, { debug: options.debug });
+            mixpanel__default["default"].init(options.token, options.config);
             return Promise.resolve();
         }
         async distinctId() {

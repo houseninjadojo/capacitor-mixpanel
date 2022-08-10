@@ -7,18 +7,21 @@
     "methods": [
       {
         "name": "initialize",
-        "signature": "(options: { token: string; debug: boolean; }) => Promise<void>",
+        "signature": "(option: { token: string; config?: Partial<Config>; }) => Promise<void>",
         "parameters": [
           {
-            "name": "options",
+            "name": "option",
             "docs": "",
-            "type": "{ token: string; debug: boolean; }"
+            "type": "{ token: string; config?: Partial<Config> | undefined; }"
           }
         ],
         "returns": "Promise<void>",
         "tags": [],
         "docs": "",
-        "complexTypes": [],
+        "complexTypes": [
+          "Partial",
+          "Config"
+        ],
         "slug": "initialize"
       },
       {
@@ -186,8 +189,2571 @@
     ],
     "properties": []
   },
-  "interfaces": [],
+  "interfaces": [
+    {
+      "name": "Config",
+      "slug": "config",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "api_host",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "api_method",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "api_transport",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "app_host",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "autotrack",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "cdn",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "cookie_domain",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "cross_site_cookie",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "cross_subdomain_cookie",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "persistence",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Persistence"
+          ],
+          "type": "Persistence"
+        },
+        {
+          "name": "persistence_name",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "cookie_name",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "loaded",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Mixpanel"
+          ],
+          "type": "(mixpanel: Mixpanel) => void"
+        },
+        {
+          "name": "store_google",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "save_referrer",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "test",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "verbose",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "img",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "debug",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "track_links_timeout",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "cookie_expiration",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "upgrade",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "disable_persistence",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "disable_cookie",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "disable_notifications",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "secure_cookie",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "ip",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "property_blacklist",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string[]"
+        },
+        {
+          "name": "xhr_headers",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "XhrHeadersDef"
+          ],
+          "type": "XhrHeadersDef"
+        },
+        {
+          "name": "opt_out_tracking_by_default",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "opt_out_persistence_by_default",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "opt_out_tracking_persistence_type",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Persistence"
+          ],
+          "type": "Persistence"
+        },
+        {
+          "name": "opt_out_tracking_cookie_prefix",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "inapp_protocol",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "inapp_link_new_window",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "ignore_dnt",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "batch_requests",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "batch_size",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "batch_flush_interval_ms",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "batch_request_timeout_ms",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "Mixpanel",
+      "slug": "mixpanel",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "add_group",
+          "signature": "(group_key: string, group_id: string, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "group_key",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "group_id",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "add_group"
+        },
+        {
+          "name": "alias",
+          "signature": "(alias: string, original?: string | undefined) => void",
+          "parameters": [
+            {
+              "name": "alias",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "original",
+              "docs": "",
+              "type": "string | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "alias"
+        },
+        {
+          "name": "clear_opt_in_out_tracking",
+          "signature": "(options?: Partial<ClearOptOutInOutOptions> | undefined) => void",
+          "parameters": [
+            {
+              "name": "options",
+              "docs": "",
+              "type": "Partial<ClearOptOutInOutOptions> | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Partial",
+            "ClearOptOutInOutOptions"
+          ],
+          "slug": "clear_opt_in_out_tracking"
+        },
+        {
+          "name": "disable",
+          "signature": "(events?: string[] | undefined) => void",
+          "parameters": [
+            {
+              "name": "events",
+              "docs": "",
+              "type": "string[] | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "disable"
+        },
+        {
+          "name": "get_config",
+          "signature": "(prop_name?: string | undefined) => any",
+          "parameters": [
+            {
+              "name": "prop_name",
+              "docs": "",
+              "type": "string | undefined"
+            }
+          ],
+          "returns": "any",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "get_config"
+        },
+        {
+          "name": "get_distinct_id",
+          "signature": "() => any",
+          "parameters": [],
+          "returns": "any",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "get_distinct_id"
+        },
+        {
+          "name": "get_group",
+          "signature": "(group_key: string, group_id: string) => Group",
+          "parameters": [
+            {
+              "name": "group_key",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "group_id",
+              "docs": "",
+              "type": "string"
+            }
+          ],
+          "returns": "Group",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Group"
+          ],
+          "slug": "get_group"
+        },
+        {
+          "name": "get_property",
+          "signature": "(property_name: string) => any",
+          "parameters": [
+            {
+              "name": "property_name",
+              "docs": "",
+              "type": "string"
+            }
+          ],
+          "returns": "any",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "get_property"
+        },
+        {
+          "name": "has_opted_in_tracking",
+          "signature": "(options?: Partial<HasOptedInOutOptions> | undefined) => boolean",
+          "parameters": [
+            {
+              "name": "options",
+              "docs": "",
+              "type": "Partial<HasOptedInOutOptions> | undefined"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Partial",
+            "HasOptedInOutOptions"
+          ],
+          "slug": "has_opted_in_tracking"
+        },
+        {
+          "name": "has_opted_out_tracking",
+          "signature": "(options?: Partial<HasOptedInOutOptions> | undefined) => boolean",
+          "parameters": [
+            {
+              "name": "options",
+              "docs": "",
+              "type": "Partial<HasOptedInOutOptions> | undefined"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Partial",
+            "HasOptedInOutOptions"
+          ],
+          "slug": "has_opted_out_tracking"
+        },
+        {
+          "name": "identify",
+          "signature": "(unique_id?: string | undefined) => any",
+          "parameters": [
+            {
+              "name": "unique_id",
+              "docs": "",
+              "type": "string | undefined"
+            }
+          ],
+          "returns": "any",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "identify"
+        },
+        {
+          "name": "init",
+          "signature": "(token: string, config: Partial<Config>, name: string) => Mixpanel",
+          "parameters": [
+            {
+              "name": "token",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "config",
+              "docs": "",
+              "type": "Partial<Config>"
+            },
+            {
+              "name": "name",
+              "docs": "",
+              "type": "string"
+            }
+          ],
+          "returns": "Mixpanel",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Mixpanel",
+            "Partial",
+            "Config"
+          ],
+          "slug": "init"
+        },
+        {
+          "name": "opt_in_tracking",
+          "signature": "(options?: Partial<InTrackingOptions> | undefined) => void",
+          "parameters": [
+            {
+              "name": "options",
+              "docs": "",
+              "type": "Partial<InTrackingOptions> | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Partial",
+            "InTrackingOptions"
+          ],
+          "slug": "opt_in_tracking"
+        },
+        {
+          "name": "opt_out_tracking",
+          "signature": "(options?: Partial<OutTrackingOptions> | undefined) => void",
+          "parameters": [
+            {
+              "name": "options",
+              "docs": "",
+              "type": "Partial<OutTrackingOptions> | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Partial",
+            "OutTrackingOptions"
+          ],
+          "slug": "opt_out_tracking"
+        },
+        {
+          "name": "push",
+          "signature": "(item: PushItem) => void",
+          "parameters": [
+            {
+              "name": "item",
+              "docs": "",
+              "type": "PushItem"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "PushItem"
+          ],
+          "slug": "push"
+        },
+        {
+          "name": "register",
+          "signature": "(props: Dict, days?: number | undefined) => void",
+          "parameters": [
+            {
+              "name": "props",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "days",
+              "docs": "",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict"
+          ],
+          "slug": "register"
+        },
+        {
+          "name": "register_once",
+          "signature": "(props: Dict, default_value?: any, days?: number | undefined) => void",
+          "parameters": [
+            {
+              "name": "props",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "default_value",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "days",
+              "docs": "",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict"
+          ],
+          "slug": "register_once"
+        },
+        {
+          "name": "remove_group",
+          "signature": "(group_key: string, group_ids: string | string[] | number | number[], callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "group_key",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "group_ids",
+              "docs": "",
+              "type": "string | number | string[] | number[]"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "remove_group"
+        },
+        {
+          "name": "reset",
+          "signature": "() => void",
+          "parameters": [],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "reset"
+        },
+        {
+          "name": "set_config",
+          "signature": "(config: Partial<Config>) => void",
+          "parameters": [
+            {
+              "name": "config",
+              "docs": "",
+              "type": "Partial<Config>"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Partial",
+            "Config"
+          ],
+          "slug": "set_config"
+        },
+        {
+          "name": "set_group",
+          "signature": "(group_key: string, group_ids: string | string[] | number | number[], callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "group_key",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "group_ids",
+              "docs": "",
+              "type": "string | number | string[] | number[]"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "set_group"
+        },
+        {
+          "name": "time_event",
+          "signature": "(event_name: string) => void",
+          "parameters": [
+            {
+              "name": "event_name",
+              "docs": "",
+              "type": "string"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "time_event"
+        },
+        {
+          "name": "track",
+          "signature": "(event_name: string, properties?: Dict | undefined, optionsOrCallback?: Callback | RequestOptions | undefined, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "event_name",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "properties",
+              "docs": "",
+              "type": "Dict | undefined"
+            },
+            {
+              "name": "optionsOrCallback",
+              "docs": "",
+              "type": "Callback | RequestOptions | undefined"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "RequestOptions",
+            "Callback"
+          ],
+          "slug": "track"
+        },
+        {
+          "name": "track_forms",
+          "signature": "(query: Query, event_name: string, properties?: Dict | (() => void) | undefined) => void",
+          "parameters": [
+            {
+              "name": "query",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "event_name",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "properties",
+              "docs": "",
+              "type": "Dict | (() => void) | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Query",
+            "Dict"
+          ],
+          "slug": "track_forms"
+        },
+        {
+          "name": "track_links",
+          "signature": "(query: Query, event_name: string, properties?: Dict | (() => void) | undefined) => void",
+          "parameters": [
+            {
+              "name": "query",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "event_name",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "properties",
+              "docs": "",
+              "type": "Dict | (() => void) | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Query",
+            "Dict"
+          ],
+          "slug": "track_links"
+        },
+        {
+          "name": "track_with_groups",
+          "signature": "(event_name: string, properties: Dict, groups: Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "event_name",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "properties",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "groups",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "track_with_groups"
+        },
+        {
+          "name": "unregister",
+          "signature": "(property: string) => void",
+          "parameters": [
+            {
+              "name": "property",
+              "docs": "",
+              "type": "string"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "unregister"
+        }
+      ],
+      "properties": [
+        {
+          "name": "people",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "People"
+          ],
+          "type": "People"
+        }
+      ]
+    },
+    {
+      "name": "ClearOptOutInOutOptions",
+      "slug": "clearoptoutinoutoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "cookie_expiration",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "cross_subdomain_cookie",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "secure_cookie",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "Group",
+      "slug": "group",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "remove",
+          "signature": "(list_name: string, value: string, callback?: Callback | undefined) => Group",
+          "parameters": [
+            {
+              "name": "list_name",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "value",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "Group",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Group",
+            "Callback"
+          ],
+          "slug": "remove"
+        },
+        {
+          "name": "set",
+          "signature": "<Prop extends string | Dict>(prop: Prop, to?: (Prop extends string ? string : undefined) | undefined, callback?: Callback | undefined) => Group",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Prop"
+            },
+            {
+              "name": "to",
+              "docs": "",
+              "type": "(Prop extends string ? string : undefined) | undefined"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "Group",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Group",
+            "Dict",
+            "Prop",
+            "Callback"
+          ],
+          "slug": "set"
+        },
+        {
+          "name": "set_once",
+          "signature": "<Prop extends string | Dict>(prop: Prop, to?: (Prop extends string ? string : undefined) | undefined, callback?: Callback | undefined) => Group",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Prop"
+            },
+            {
+              "name": "to",
+              "docs": "",
+              "type": "(Prop extends string ? string : undefined) | undefined"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "Group",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Group",
+            "Dict",
+            "Prop",
+            "Callback"
+          ],
+          "slug": "set_once"
+        },
+        {
+          "name": "union",
+          "signature": "(list_name: string, values: Array<string | number>, callback?: Callback | undefined) => Group",
+          "parameters": [
+            {
+              "name": "list_name",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "values",
+              "docs": "",
+              "type": "(string | number)[]"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "Group",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Group",
+            "Array",
+            "Callback"
+          ],
+          "slug": "union"
+        },
+        {
+          "name": "unset",
+          "signature": "(prop: string, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "unset"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "name": "Dict",
+      "slug": "dict",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": []
+    },
+    {
+      "name": "Array",
+      "slug": "array",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "toString",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns a string representation of an array.",
+          "complexTypes": [],
+          "slug": "tostring"
+        },
+        {
+          "name": "toLocaleString",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns a string representation of an array. The elements are converted to string using their toLocalString methods.",
+          "complexTypes": [],
+          "slug": "tolocalestring"
+        },
+        {
+          "name": "pop",
+          "signature": "() => T | undefined",
+          "parameters": [],
+          "returns": "T | undefined",
+          "tags": [],
+          "docs": "Removes the last element from an array and returns it.\r\nIf the array is empty, undefined is returned and the array is not modified.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "pop"
+        },
+        {
+          "name": "push",
+          "signature": "(...items: T[]) => number",
+          "parameters": [
+            {
+              "name": "items",
+              "docs": "New elements to add to the array.",
+              "type": "T[]"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "items New elements to add to the array."
+            }
+          ],
+          "docs": "Appends new elements to the end of an array, and returns the new length of the array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "push"
+        },
+        {
+          "name": "concat",
+          "signature": "(...items: ConcatArray<T>[]) => T[]",
+          "parameters": [
+            {
+              "name": "items",
+              "docs": "Additional arrays and/or items to add to the end of the array.",
+              "type": "ConcatArray<T>[]"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "items Additional arrays and/or items to add to the end of the array."
+            }
+          ],
+          "docs": "Combines two or more arrays.\r\nThis method returns a new array without modifying any existing arrays.",
+          "complexTypes": [
+            "T",
+            "ConcatArray"
+          ],
+          "slug": "concat"
+        },
+        {
+          "name": "concat",
+          "signature": "(...items: (T | ConcatArray<T>)[]) => T[]",
+          "parameters": [
+            {
+              "name": "items",
+              "docs": "Additional arrays and/or items to add to the end of the array.",
+              "type": "(T | ConcatArray<T>)[]"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "items Additional arrays and/or items to add to the end of the array."
+            }
+          ],
+          "docs": "Combines two or more arrays.\r\nThis method returns a new array without modifying any existing arrays.",
+          "complexTypes": [
+            "T",
+            "ConcatArray"
+          ],
+          "slug": "concat"
+        },
+        {
+          "name": "join",
+          "signature": "(separator?: string | undefined) => string",
+          "parameters": [
+            {
+              "name": "separator",
+              "docs": "A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.",
+              "type": "string | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "separator A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma."
+            }
+          ],
+          "docs": "Adds all the elements of an array into a string, separated by the specified separator string.",
+          "complexTypes": [],
+          "slug": "join"
+        },
+        {
+          "name": "reverse",
+          "signature": "() => T[]",
+          "parameters": [],
+          "returns": "T[]",
+          "tags": [],
+          "docs": "Reverses the elements in an array in place.\r\nThis method mutates the array and returns a reference to the same array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "reverse"
+        },
+        {
+          "name": "shift",
+          "signature": "() => T | undefined",
+          "parameters": [],
+          "returns": "T | undefined",
+          "tags": [],
+          "docs": "Removes the first element from an array and returns it.\r\nIf the array is empty, undefined is returned and the array is not modified.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "shift"
+        },
+        {
+          "name": "slice",
+          "signature": "(start?: number | undefined, end?: number | undefined) => T[]",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The beginning index of the specified portion of the array.\r\nIf start is undefined, then the slice begins at index 0.",
+              "type": "number | undefined"
+            },
+            {
+              "name": "end",
+              "docs": "The end index of the specified portion of the array. This is exclusive of the element at the index 'end'.\r\nIf end is undefined, then the slice extends to the end of the array.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The beginning index of the specified portion of the array.\r\nIf start is undefined, then the slice begins at index 0."
+            },
+            {
+              "name": "param",
+              "text": "end The end index of the specified portion of the array. This is exclusive of the element at the index 'end'.\r\nIf end is undefined, then the slice extends to the end of the array."
+            }
+          ],
+          "docs": "Returns a copy of a section of an array.\r\nFor both start and end, a negative index can be used to indicate an offset from the end of the array.\r\nFor example, -2 refers to the second to last element of the array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "slice"
+        },
+        {
+          "name": "sort",
+          "signature": "(compareFn?: ((a: T, b: T) => number) | undefined) => this",
+          "parameters": [
+            {
+              "name": "compareFn",
+              "docs": "Function used to determine the order of the elements. It is expected to return\r\na negative value if first argument is less than second argument, zero if they're equal and a positive\r\nvalue otherwise. If omitted, the elements are sorted in ascending, ASCII character order.\r\n```ts\r\n[11,2,22,1].sort((a, b) => a - b)\r\n```",
+              "type": "((a: T, b: T) => number) | undefined"
+            }
+          ],
+          "returns": "this",
+          "tags": [
+            {
+              "name": "param",
+              "text": "compareFn Function used to determine the order of the elements. It is expected to return\r\na negative value if first argument is less than second argument, zero if they're equal and a positive\r\nvalue otherwise. If omitted, the elements are sorted in ascending, ASCII character order.\r\n```ts\r\n[11,2,22,1].sort((a, b) => a - b)\r\n```"
+            }
+          ],
+          "docs": "Sorts an array in place.\r\nThis method mutates the array and returns a reference to the same array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "sort"
+        },
+        {
+          "name": "splice",
+          "signature": "(start: number, deleteCount?: number | undefined) => T[]",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The zero-based location in the array from which to start removing elements.",
+              "type": "number"
+            },
+            {
+              "name": "deleteCount",
+              "docs": "The number of elements to remove.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The zero-based location in the array from which to start removing elements."
+            },
+            {
+              "name": "param",
+              "text": "deleteCount The number of elements to remove."
+            },
+            {
+              "name": "returns",
+              "text": "An array containing the elements that were deleted."
+            }
+          ],
+          "docs": "Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "splice"
+        },
+        {
+          "name": "splice",
+          "signature": "(start: number, deleteCount: number, ...items: T[]) => T[]",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The zero-based location in the array from which to start removing elements.",
+              "type": "number"
+            },
+            {
+              "name": "deleteCount",
+              "docs": "The number of elements to remove.",
+              "type": "number"
+            },
+            {
+              "name": "items",
+              "docs": "Elements to insert into the array in place of the deleted elements.",
+              "type": "T[]"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The zero-based location in the array from which to start removing elements."
+            },
+            {
+              "name": "param",
+              "text": "deleteCount The number of elements to remove."
+            },
+            {
+              "name": "param",
+              "text": "items Elements to insert into the array in place of the deleted elements."
+            },
+            {
+              "name": "returns",
+              "text": "An array containing the elements that were deleted."
+            }
+          ],
+          "docs": "Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "splice"
+        },
+        {
+          "name": "unshift",
+          "signature": "(...items: T[]) => number",
+          "parameters": [
+            {
+              "name": "items",
+              "docs": "Elements to insert at the start of the array.",
+              "type": "T[]"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "items Elements to insert at the start of the array."
+            }
+          ],
+          "docs": "Inserts new elements at the start of an array, and returns the new length of the array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "unshift"
+        },
+        {
+          "name": "indexOf",
+          "signature": "(searchElement: T, fromIndex?: number | undefined) => number",
+          "parameters": [
+            {
+              "name": "searchElement",
+              "docs": "The value to locate in the array.",
+              "type": "T"
+            },
+            {
+              "name": "fromIndex",
+              "docs": "The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchElement The value to locate in the array."
+            },
+            {
+              "name": "param",
+              "text": "fromIndex The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0."
+            }
+          ],
+          "docs": "Returns the index of the first occurrence of a value in an array, or -1 if it is not present.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "indexof"
+        },
+        {
+          "name": "lastIndexOf",
+          "signature": "(searchElement: T, fromIndex?: number | undefined) => number",
+          "parameters": [
+            {
+              "name": "searchElement",
+              "docs": "The value to locate in the array.",
+              "type": "T"
+            },
+            {
+              "name": "fromIndex",
+              "docs": "The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchElement The value to locate in the array."
+            },
+            {
+              "name": "param",
+              "text": "fromIndex The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array."
+            }
+          ],
+          "docs": "Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "lastindexof"
+        },
+        {
+          "name": "every",
+          "signature": "<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any) => this is S[]",
+          "parameters": [
+            {
+              "name": "predicate",
+              "docs": "A function that accepts up to three arguments. The every method calls\r\nthe predicate function for each element in the array until the predicate returns a value\r\nwhich is coercible to the Boolean value false, or until the end of the array.",
+              "type": "(value: T, index: number, array: T[]) => value is S"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the predicate function.\r\nIf thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [
+            {
+              "name": "param",
+              "text": "predicate A function that accepts up to three arguments. The every method calls\r\nthe predicate function for each element in the array until the predicate returns a value\r\nwhich is coercible to the Boolean value false, or until the end of the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the predicate function.\r\nIf thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Determines whether all the members of an array satisfy the specified test.",
+          "complexTypes": [
+            "T",
+            "S"
+          ],
+          "slug": "every"
+        },
+        {
+          "name": "every",
+          "signature": "(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any) => boolean",
+          "parameters": [
+            {
+              "name": "predicate",
+              "docs": "A function that accepts up to three arguments. The every method calls\r\nthe predicate function for each element in the array until the predicate returns a value\r\nwhich is coercible to the Boolean value false, or until the end of the array.",
+              "type": "(value: T, index: number, array: T[]) => unknown"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the predicate function.\r\nIf thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [
+            {
+              "name": "param",
+              "text": "predicate A function that accepts up to three arguments. The every method calls\r\nthe predicate function for each element in the array until the predicate returns a value\r\nwhich is coercible to the Boolean value false, or until the end of the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the predicate function.\r\nIf thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Determines whether all the members of an array satisfy the specified test.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "every"
+        },
+        {
+          "name": "some",
+          "signature": "(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any) => boolean",
+          "parameters": [
+            {
+              "name": "predicate",
+              "docs": "A function that accepts up to three arguments. The some method calls\r\nthe predicate function for each element in the array until the predicate returns a value\r\nwhich is coercible to the Boolean value true, or until the end of the array.",
+              "type": "(value: T, index: number, array: T[]) => unknown"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the predicate function.\r\nIf thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [
+            {
+              "name": "param",
+              "text": "predicate A function that accepts up to three arguments. The some method calls\r\nthe predicate function for each element in the array until the predicate returns a value\r\nwhich is coercible to the Boolean value true, or until the end of the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the predicate function.\r\nIf thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Determines whether the specified callback function returns true for any element of an array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "some"
+        },
+        {
+          "name": "forEach",
+          "signature": "(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any) => void",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array.",
+              "type": "(value: T, index: number, array: T[]) => void"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "void",
+          "tags": [
+            {
+              "name": "param",
+              "text": "callbackfn A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Performs the specified action for each element in an array.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "foreach"
+        },
+        {
+          "name": "map",
+          "signature": "<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any) => U[]",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.",
+              "type": "(value: T, index: number, array: T[]) => U"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "U[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "callbackfn A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Calls a defined callback function on each element of an array, and returns an array that contains the results.",
+          "complexTypes": [
+            "U",
+            "T"
+          ],
+          "slug": "map"
+        },
+        {
+          "name": "filter",
+          "signature": "<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any) => S[]",
+          "parameters": [
+            {
+              "name": "predicate",
+              "docs": "A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.",
+              "type": "(value: T, index: number, array: T[]) => value is S"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "S[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Returns the elements of an array that meet the condition specified in a callback function.",
+          "complexTypes": [
+            "S",
+            "T"
+          ],
+          "slug": "filter"
+        },
+        {
+          "name": "filter",
+          "signature": "(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any) => T[]",
+          "parameters": [
+            {
+              "name": "predicate",
+              "docs": "A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.",
+              "type": "(value: T, index: number, array: T[]) => unknown"
+            },
+            {
+              "name": "thisArg",
+              "docs": "An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.",
+              "type": "any"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value."
+            }
+          ],
+          "docs": "Returns the elements of an array that meet the condition specified in a callback function.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "filter"
+        },
+        {
+          "name": "reduce",
+          "signature": "(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T) => T",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array.",
+              "type": "(previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T"
+            }
+          ],
+          "returns": "T",
+          "tags": [
+            {
+              "name": "param",
+              "text": "callbackfn A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value."
+            }
+          ],
+          "docs": "Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "reduce"
+        },
+        {
+          "name": "reduce",
+          "signature": "(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T) => T",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "",
+              "type": "(previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T"
+            },
+            {
+              "name": "initialValue",
+              "docs": "",
+              "type": "T"
+            }
+          ],
+          "returns": "T",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "reduce"
+        },
+        {
+          "name": "reduce",
+          "signature": "<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U) => U",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array.",
+              "type": "(previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U"
+            },
+            {
+              "name": "initialValue",
+              "docs": "If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.",
+              "type": "U"
+            }
+          ],
+          "returns": "U",
+          "tags": [
+            {
+              "name": "param",
+              "text": "callbackfn A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value."
+            }
+          ],
+          "docs": "Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.",
+          "complexTypes": [
+            "U",
+            "T"
+          ],
+          "slug": "reduce"
+        },
+        {
+          "name": "reduceRight",
+          "signature": "(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T) => T",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "A function that accepts up to four arguments. The reduceRight method calls the callbackfn function one time for each element in the array.",
+              "type": "(previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T"
+            }
+          ],
+          "returns": "T",
+          "tags": [
+            {
+              "name": "param",
+              "text": "callbackfn A function that accepts up to four arguments. The reduceRight method calls the callbackfn function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value."
+            }
+          ],
+          "docs": "Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "reduceright"
+        },
+        {
+          "name": "reduceRight",
+          "signature": "(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T) => T",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "",
+              "type": "(previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T"
+            },
+            {
+              "name": "initialValue",
+              "docs": "",
+              "type": "T"
+            }
+          ],
+          "returns": "T",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "reduceright"
+        },
+        {
+          "name": "reduceRight",
+          "signature": "<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U) => U",
+          "parameters": [
+            {
+              "name": "callbackfn",
+              "docs": "A function that accepts up to four arguments. The reduceRight method calls the callbackfn function one time for each element in the array.",
+              "type": "(previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U"
+            },
+            {
+              "name": "initialValue",
+              "docs": "If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.",
+              "type": "U"
+            }
+          ],
+          "returns": "U",
+          "tags": [
+            {
+              "name": "param",
+              "text": "callbackfn A function that accepts up to four arguments. The reduceRight method calls the callbackfn function one time for each element in the array."
+            },
+            {
+              "name": "param",
+              "text": "initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value."
+            }
+          ],
+          "docs": "Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.",
+          "complexTypes": [
+            "U",
+            "T"
+          ],
+          "slug": "reduceright"
+        }
+      ],
+      "properties": [
+        {
+          "name": "length",
+          "tags": [],
+          "docs": "Gets or sets the length of the array. This is a number one higher than the highest index in the array.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "ConcatArray",
+      "slug": "concatarray",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "join",
+          "signature": "(separator?: string | undefined) => string",
+          "parameters": [
+            {
+              "name": "separator",
+              "docs": "",
+              "type": "string | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "join"
+        },
+        {
+          "name": "slice",
+          "signature": "(start?: number | undefined, end?: number | undefined) => T[]",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "",
+              "type": "number | undefined"
+            },
+            {
+              "name": "end",
+              "docs": "",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "T[]",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "T"
+          ],
+          "slug": "slice"
+        }
+      ],
+      "properties": [
+        {
+          "name": "length",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "HasOptedInOutOptions",
+      "slug": "hasoptedinoutoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "persistence_type",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Persistence"
+          ],
+          "type": "Persistence"
+        },
+        {
+          "name": "cookie_prefix",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "InTrackingOptions",
+      "slug": "intrackingoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "track",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => void"
+        },
+        {
+          "name": "track_event_name",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "track_event_properties",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict"
+          ],
+          "type": "Dict"
+        }
+      ]
+    },
+    {
+      "name": "OutTrackingOptions",
+      "slug": "outtrackingoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "delete_user",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "RequestOptions",
+      "slug": "requestoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "transport",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "'xhr' | 'sendBeacon' | undefined"
+        },
+        {
+          "name": "send_immediately",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "People",
+      "slug": "people",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "set",
+          "signature": "(prop: string, to: any, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "to",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "set"
+        },
+        {
+          "name": "set",
+          "signature": "(prop: Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "set"
+        },
+        {
+          "name": "set_once",
+          "signature": "(prop: string, to: any, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "to",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "set_once"
+        },
+        {
+          "name": "set_once",
+          "signature": "(prop: Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "set_once"
+        },
+        {
+          "name": "unset",
+          "signature": "(prop: string[] | string, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string | string[]"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "unset"
+        },
+        {
+          "name": "increment",
+          "signature": "(prop: string | Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string | Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "increment"
+        },
+        {
+          "name": "increment",
+          "signature": "(prop: string, by: number, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "by",
+              "docs": "",
+              "type": "number"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "increment"
+        },
+        {
+          "name": "remove",
+          "signature": "(prop: string, value: any, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "value",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "remove"
+        },
+        {
+          "name": "remove",
+          "signature": "(prop: Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "remove"
+        },
+        {
+          "name": "append",
+          "signature": "(prop: string, value: any, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "value",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "append"
+        },
+        {
+          "name": "append",
+          "signature": "(prop: Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "append"
+        },
+        {
+          "name": "union",
+          "signature": "(prop: string, value: any, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "string"
+            },
+            {
+              "name": "value",
+              "docs": "",
+              "type": "any"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "union"
+        },
+        {
+          "name": "union",
+          "signature": "(prop: Dict, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "prop",
+              "docs": "",
+              "type": "Dict"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "union"
+        },
+        {
+          "name": "track_charge",
+          "signature": "(amount: number, propertiesOrCallback?: Dict | Callback | undefined, callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "amount",
+              "docs": "",
+              "type": "number"
+            },
+            {
+              "name": "propertiesOrCallback",
+              "docs": "",
+              "type": "Dict | Callback | undefined"
+            },
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Dict",
+            "Callback"
+          ],
+          "slug": "track_charge"
+        },
+        {
+          "name": "clear_charges",
+          "signature": "(callback?: Callback | undefined) => void",
+          "parameters": [
+            {
+              "name": "callback",
+              "docs": "",
+              "type": "Callback | undefined"
+            }
+          ],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "Callback"
+          ],
+          "slug": "clear_charges"
+        },
+        {
+          "name": "delete_user",
+          "signature": "() => void",
+          "parameters": [],
+          "returns": "void",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "delete_user"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "name": "XhrHeadersDef",
+      "slug": "xhrheadersdef",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": []
+    }
+  ],
   "enums": [],
-  "typeAliases": [],
+  "typeAliases": [
+    {
+      "name": "Partial",
+      "slug": "partial",
+      "docs": "Make all properties in T optional",
+      "types": [
+        {
+          "text": "{\r\n    [P in keyof T]?: T[P];\r\n}",
+          "complexTypes": [
+            "T",
+            "P"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Persistence",
+      "slug": "persistence",
+      "docs": "",
+      "types": [
+        {
+          "text": "'cookie'",
+          "complexTypes": []
+        },
+        {
+          "text": "'localStorage'",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "Callback",
+      "slug": "callback",
+      "docs": "",
+      "types": [
+        {
+          "text": "(response: Response): void",
+          "complexTypes": [
+            "Response"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Response",
+      "slug": "response",
+      "docs": "",
+      "types": [
+        {
+          "text": "VerboseResponse",
+          "complexTypes": [
+            "VerboseResponse"
+          ]
+        },
+        {
+          "text": "NormalResponse",
+          "complexTypes": [
+            "NormalResponse"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VerboseResponse",
+      "slug": "verboseresponse",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n          status: 1;\n          error: null;\n      }",
+          "complexTypes": []
+        },
+        {
+          "text": "{\n          status: 0;\n          error: string;\n      }",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "NormalResponse",
+      "slug": "normalresponse",
+      "docs": "",
+      "types": [
+        {
+          "text": "1",
+          "complexTypes": []
+        },
+        {
+          "text": "0",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "PushItem",
+      "slug": "pushitem",
+      "docs": "",
+      "types": [
+        {
+          "text": "Array<string | Dict>",
+          "complexTypes": [
+            "Array",
+            "Dict"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Query",
+      "slug": "query",
+      "docs": "",
+      "types": [
+        {
+          "text": "string",
+          "complexTypes": []
+        },
+        {
+          "text": "Element",
+          "complexTypes": [
+            "Element"
+          ]
+        },
+        {
+          "text": "Element[]",
+          "complexTypes": [
+            "Element"
+          ]
+        }
+      ]
+    }
+  ],
   "pluginConfigs": []
 }

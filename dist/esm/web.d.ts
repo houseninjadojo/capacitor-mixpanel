@@ -1,4 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
+import type { Config } from 'mixpanel-browser';
 import type { MixpanelPlugin } from './definitions';
 declare global {
     interface Window {
@@ -10,7 +11,7 @@ export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     constructor();
     initialize(options: {
         token: string;
-        debug: boolean;
+        config?: Partial<Config>;
     }): Promise<void>;
     distinctId(): Promise<{
         value: string;

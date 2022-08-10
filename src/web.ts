@@ -1,4 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
+import type { Config } from 'mixpanel-browser';
 import mixpanel from 'mixpanel-browser';
 
 import type { MixpanelPlugin } from './definitions';
@@ -17,16 +18,19 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     window.mixpanel = mixpanel;
   }
 
-  async initialize(options: { token: string, debug: boolean }): Promise<void> {
-    mixpanel.init(options.token, { debug: options.debug });
+  async initialize(options: {
+    token: string;
+    config?: Partial<Config>;
+  }): Promise<void> {
+    mixpanel.init(options.token, options.config);
     return Promise.resolve();
   }
-  
-  async distinctId(): Promise<{value: string}> {
+
+  async distinctId(): Promise<{ value: string }> {
     return Promise.resolve({ value: mixpanel.get_distinct_id() });
   }
 
-  async track(options: { event: string, properties: any }): Promise<void> {
+  async track(options: { event: string; properties: any }): Promise<void> {
     mixpanel.track(options.event, options.properties);
     return Promise.resolve();
   }
@@ -36,7 +40,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     return Promise.resolve();
   }
 
-  async alias(options: { alias: string, distinctId: string }): Promise<void> {
+  async alias(options: { alias: string; distinctId: string }): Promise<void> {
     mixpanel.alias(options.alias, options.distinctId);
     return Promise.resolve();
   }
@@ -69,13 +73,16 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     mixpanel.people.set(options.properties);
     return Promise.resolve();
   }
-  
+
   async setProfileUnion(options: { properties: any }): Promise<void> {
     mixpanel.people.union(options.properties);
     return Promise.resolve();
   }
 
-  async trackCharge(options: { amount: number, properties: any }): Promise<void> {
+  async trackCharge(options: {
+    amount: number;
+    properties: any;
+  }): Promise<void> {
     mixpanel.people.track_charge(options.amount, options.properties);
   }
 

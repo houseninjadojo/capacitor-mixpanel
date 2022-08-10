@@ -1,22 +1,19 @@
 package co.houseninja.plugins.mixpanel;
 
 import android.util.Log;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
-
-import java.util.Iterator;
-
 @CapacitorPlugin(name = "Mixpanel")
 public class MixpanelPlugin extends Plugin {
+
     private MixpanelAPI mixpanel;
 
     @Override
@@ -27,7 +24,7 @@ public class MixpanelPlugin extends Plugin {
         mixpanel = MixpanelAPI.getInstance(getContext(), token);
 
         if (serverUrl != null) {
-          mixpanel.setServerURL(serverUrl);
+            mixpanel.setServerURL(serverUrl);
         }
 
         // load parent
@@ -109,7 +106,7 @@ public class MixpanelPlugin extends Plugin {
     public void setProfileUnion(PluginCall call) {
         JSObject properties = call.getObject("properties");
         Iterator<String> keys = properties.keys();
-        while (keys.hasNext()){
+        while (keys.hasNext()) {
             String key = keys.next();
             JSONArray values = properties.optJSONArray(key);
             mixpanel.getPeople().union(key, values);

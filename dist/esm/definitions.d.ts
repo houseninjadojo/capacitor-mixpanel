@@ -1,7 +1,8 @@
+import type { Config } from 'mixpanel-browser';
 export interface MixpanelPlugin {
-    initialize(options: {
+    initialize(option: {
         token: string;
-        debug: boolean;
+        config?: Partial<Config>;
     }): Promise<void>;
     distinctId(): Promise<{
         value: string;
