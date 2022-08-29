@@ -35,22 +35,19 @@ npx cap sync
 
 <docgen-index>
 
-- [@houseninja/capacitor-mixpanel](#houseninjacapacitor-mixpanel)
-  - [Install](#install)
-  - [API](#api)
-    - [initialize(...)](#initialize)
-    - [distinctId()](#distinctid)
-    - [track(...)](#track)
-    - [identify(...)](#identify)
-    - [alias(...)](#alias)
-    - [reset()](#reset)
-    - [clearSuperProperties()](#clearsuperproperties)
-    - [currentSuperProperties()](#currentsuperproperties)
-    - [registerSuperProperties(...)](#registersuperproperties)
-    - [setProfile(...)](#setprofile)
-    - [setProfileUnion(...)](#setprofileunion)
-    - [trackCharge(...)](#trackcharge)
-    - [flush()](#flush)
+* [`initialize(...)`](#initialize)
+* [`distinctId()`](#distinctid)
+* [`track(...)`](#track)
+* [`identify(...)`](#identify)
+* [`alias(...)`](#alias)
+* [`reset()`](#reset)
+* [`clearSuperProperties()`](#clearsuperproperties)
+* [`currentSuperProperties()`](#currentsuperproperties)
+* [`registerSuperProperties(...)`](#registersuperproperties)
+* [`setProfile(...)`](#setprofile)
+* [`setProfileUnion(...)`](#setprofileunion)
+* [`trackCharge(...)`](#trackcharge)
+* [`flush()`](#flush)
 
 </docgen-index>
 
@@ -60,12 +57,12 @@ npx cap sync
 ### initialize(...)
 
 ```typescript
-initialize(options: { token: string; debug: boolean; }) => Promise<void>
+initialize(options: { token: string; autotrack: boolean; debug: boolean; }) => Promise<void>
 ```
 
-| Param         | Type                                            |
-| ------------- | ----------------------------------------------- |
-| **`options`** | <code>{ token: string; debug: boolean; }</code> |
+| Param         | Type                                                                |
+| ------------- | ------------------------------------------------------------------- |
+| **`options`** | <code>{ token: string; autotrack: boolean; debug: boolean; }</code> |
 
 --------------------
 

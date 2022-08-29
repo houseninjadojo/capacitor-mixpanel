@@ -1,6 +1,7 @@
 export interface MixpanelPlugin {
     initialize(options: {
         token: string;
+        autotrack: boolean;
         debug: boolean;
     }): Promise<void>;
     distinctId(): Promise<{
@@ -36,4 +37,38 @@ export interface MixpanelPlugin {
         properties: any;
     }): Promise<void>;
     flush(): Promise<void>;
+}
+declare module '@capacitor/cli' {
+    interface PluginsConfig {
+        Mixpanel?: {
+            /**
+             * iOS Mixpanel Token.
+             *
+             * @required
+             * @example "asdf1234asdf1234"
+             */
+            iosToken?: string;
+            /**
+             * Android Mixpanel Token.
+             *
+             * @required
+             * @example "asdf1234asdf1234"
+             */
+            androidToken?: string;
+            /**
+             * Optional. Whether or not to collect common mobile events. Default is true.
+             *
+             * @required
+             * @default true
+             */
+            trackAutomaticEvents?: boolean;
+            /**
+             * Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.
+             *
+             * @default null
+             * @example "https://api-eu.mixpanel.com/"
+             */
+            serverURL?: boolean;
+        };
+    }
 }

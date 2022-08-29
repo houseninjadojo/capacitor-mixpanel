@@ -7,6 +7,7 @@ export default {
       name: 'capacitorMixpanel',
       globals: {
         '@capacitor/core': 'capacitorExports',
+        'mixpanel-browser': 'mixpanel',
       },
       sourcemap: true,
       inlineDynamicImports: true,
@@ -18,5 +19,5 @@ export default {
       inlineDynamicImports: true,
     },
   ],
-  external: ['@capacitor/core'],
+  external: ['@capacitor/core', 'mixpanel-browser'],
 };

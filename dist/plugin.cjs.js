@@ -20,7 +20,10 @@ class MixpanelWeb extends core.WebPlugin {
         window.mixpanel = mixpanel__default["default"];
     }
     async initialize(options) {
-        mixpanel__default["default"].init(options.token, { debug: options.debug });
+        mixpanel__default["default"].init(options.token, {
+            autotrack: options.autotrack,
+            debug: options.debug,
+        });
         return Promise.resolve();
     }
     async distinctId() {

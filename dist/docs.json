@@ -7,12 +7,12 @@
     "methods": [
       {
         "name": "initialize",
-        "signature": "(options: { token: string; debug: boolean; }) => Promise<void>",
+        "signature": "(options: { token: string; autotrack: boolean; debug: boolean; }) => Promise<void>",
         "parameters": [
           {
             "name": "options",
             "docs": "",
-            "type": "{ token: string; debug: boolean; }"
+            "type": "{ token: string; autotrack: boolean; debug: boolean; }"
           }
         ],
         "returns": "Promise<void>",
@@ -189,5 +189,74 @@
   "interfaces": [],
   "enums": [],
   "typeAliases": [],
-  "pluginConfigs": []
+  "pluginConfigs": [
+    {
+      "name": "Mixpanel",
+      "slug": "mixpanel",
+      "properties": [
+        {
+          "name": "iosToken",
+          "tags": [
+            {
+              "name": "required"
+            },
+            {
+              "text": "\"asdf1234asdf1234\"",
+              "name": "example"
+            }
+          ],
+          "docs": "iOS Mixpanel Token.",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "androidToken",
+          "tags": [
+            {
+              "name": "required"
+            },
+            {
+              "text": "\"asdf1234asdf1234\"",
+              "name": "example"
+            }
+          ],
+          "docs": "Android Mixpanel Token.",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "trackAutomaticEvents",
+          "tags": [
+            {
+              "name": "required"
+            },
+            {
+              "text": "true",
+              "name": "default"
+            }
+          ],
+          "docs": "Optional. Whether or not to collect common mobile events. Default is true.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "serverURL",
+          "tags": [
+            {
+              "text": "null",
+              "name": "default"
+            },
+            {
+              "text": "\"https://api-eu.mixpanel.com/\"",
+              "name": "example"
+            }
+          ],
+          "docs": "Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ],
+      "docs": ""
+    }
+  ]
 }
