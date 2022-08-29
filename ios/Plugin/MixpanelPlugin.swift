@@ -11,8 +11,13 @@ public class MixpanelPlugin: CAPPlugin {
     public override func load() {
         let token = getConfigValue("iosToken") as? String ?? "ADD_IN_CAPACITOR_CONFIG_JSON"
         let serverURL = getConfigValue("serverUrl") as? String ?? nil
+        let trackAutomaticEvents = getConfigValue("trackAutomaticEvents") as? Bool ?? true
 
-        Mixpanel.initialize(token: token, serverURL: serverURL)
+        Mixpanel.initialize(
+            token: token,
+            trackAutomaticEvents: trackAutomaticEvents,
+            serverURL: serverURL
+        )
     }
 
     @objc func initialize(_ call: CAPPluginCall) {

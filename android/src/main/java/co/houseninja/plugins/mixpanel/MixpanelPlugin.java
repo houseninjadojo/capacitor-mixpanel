@@ -23,11 +23,12 @@ public class MixpanelPlugin extends Plugin {
     public void load() {
         String token = getConfig().getString("androidToken");
         String serverUrl = getConfig().getString("serverUrl");
+        boolean trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true);
 
-        mixpanel = MixpanelAPI.getInstance(getContext(), token);
+        mixpanel = MixpanelAPI.getInstance(getContext(), token, trackAutomaticEvents);
 
         if (serverUrl != null) {
-          mixpanel.setServerURL(serverUrl);
+            mixpanel.setServerURL(serverUrl);
         }
 
         // load parent
@@ -109,7 +110,7 @@ public class MixpanelPlugin extends Plugin {
     public void setProfileUnion(PluginCall call) {
         JSObject properties = call.getObject("properties");
         Iterator<String> keys = properties.keys();
-        while (keys.hasNext()){
+        while (keys.hasNext()) {
             String key = keys.next();
             JSONArray values = properties.optJSONArray(key);
             mixpanel.getPeople().union(key, values);

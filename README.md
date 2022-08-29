@@ -16,7 +16,9 @@ Add the following plugin configuration:
   "plugins": {
    "Mixpanel": {
       "iosToken": "ios-xxx",
-      "androidToken": "android-yyy"
+      "androidToken": "android-yyy",
+      "trackAutomaticEvents": true, // optional, default: true
+      "serverURL": null, // optional, default: null (https://api.mixpanel.com/)
     }
   }
 …
@@ -33,19 +35,22 @@ npx cap sync
 
 <docgen-index>
 
-* [`initialize(...)`](#initialize)
-* [`distinctId()`](#distinctid)
-* [`track(...)`](#track)
-* [`identify(...)`](#identify)
-* [`alias(...)`](#alias)
-* [`reset()`](#reset)
-* [`clearSuperProperties()`](#clearsuperproperties)
-* [`currentSuperProperties()`](#currentsuperproperties)
-* [`registerSuperProperties(...)`](#registersuperproperties)
-* [`setProfile(...)`](#setprofile)
-* [`setProfileUnion(...)`](#setprofileunion)
-* [`trackCharge(...)`](#trackcharge)
-* [`flush()`](#flush)
+- [@houseninja/capacitor-mixpanel](#houseninjacapacitor-mixpanel)
+  - [Install](#install)
+  - [API](#api)
+    - [initialize(...)](#initialize)
+    - [distinctId()](#distinctid)
+    - [track(...)](#track)
+    - [identify(...)](#identify)
+    - [alias(...)](#alias)
+    - [reset()](#reset)
+    - [clearSuperProperties()](#clearsuperproperties)
+    - [currentSuperProperties()](#currentsuperproperties)
+    - [registerSuperProperties(...)](#registersuperproperties)
+    - [setProfile(...)](#setprofile)
+    - [setProfileUnion(...)](#setprofileunion)
+    - [trackCharge(...)](#trackcharge)
+    - [flush()](#flush)
 
 </docgen-index>
 
