@@ -17,8 +17,11 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     window.mixpanel = mixpanel;
   }
 
-  async initialize(options: { token: string, debug: boolean }): Promise<void> {
-    mixpanel.init(options.token, { debug: options.debug });
+  async initialize(options: { token: string; autotrack: boolean; debug: boolean }): Promise<void> {
+    mixpanel.init(options.token, {
+      autotrack: options.autotrack,
+      debug: options.debug,
+    });
     return Promise.resolve();
   }
   
@@ -26,7 +29,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     return Promise.resolve({ value: mixpanel.get_distinct_id() });
   }
 
-  async track(options: { event: string, properties: any }): Promise<void> {
+  async track(options: { event: string; properties: any }): Promise<void> {
     mixpanel.track(options.event, options.properties);
     return Promise.resolve();
   }
@@ -36,7 +39,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     return Promise.resolve();
   }
 
-  async alias(options: { alias: string, distinctId: string }): Promise<void> {
+  async alias(options: { alias: string; distinctId: string }): Promise<void> {
     mixpanel.alias(options.alias, options.distinctId);
     return Promise.resolve();
   }
@@ -75,7 +78,7 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     return Promise.resolve();
   }
 
-  async trackCharge(options: { amount: number, properties: any }): Promise<void> {
+  async trackCharge(options: { amount: number; properties: any }): Promise<void> {
     mixpanel.people.track_charge(options.amount, options.properties);
   }
 

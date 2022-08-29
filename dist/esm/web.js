@@ -7,7 +7,10 @@ export class MixpanelWeb extends WebPlugin {
         window.mixpanel = mixpanel;
     }
     async initialize(options) {
-        mixpanel.init(options.token, { debug: options.debug });
+        mixpanel.init(options.token, {
+            autotrack: options.autotrack,
+            debug: options.debug,
+        });
         return Promise.resolve();
     }
     async distinctId() {

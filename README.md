@@ -16,7 +16,9 @@ Add the following plugin configuration:
   "plugins": {
    "Mixpanel": {
       "iosToken": "ios-xxx",
-      "androidToken": "android-yyy"
+      "androidToken": "android-yyy",
+      "trackAutomaticEvents": true, // optional, default: true
+      "serverURL": null, // optional, default: null (https://api.mixpanel.com/)
     }
   }
 …
@@ -55,12 +57,12 @@ npx cap sync
 ### initialize(...)
 
 ```typescript
-initialize(options: { token: string; debug: boolean; }) => Promise<void>
+initialize(options: { token: string; autotrack: boolean; debug: boolean; }) => Promise<void>
 ```
 
-| Param         | Type                                            |
-| ------------- | ----------------------------------------------- |
-| **`options`** | <code>{ token: string; debug: boolean; }</code> |
+| Param         | Type                                                                |
+| ------------- | ------------------------------------------------------------------- |
+| **`options`** | <code>{ token: string; autotrack: boolean; debug: boolean; }</code> |
 
 --------------------
 
