@@ -2,8 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 0.1.0 (2022-05-03)
+## 0.2.0 (2022-08-29)
 
+### Features
+
+* update mixpanel libraries to ios=4.0.0 android=7.0.0 web=2.45.0 (#15) ([c89f545](https://github.com/houseninjadojo/capacitor-mixpanel/commit/c89f545))
+  * this adds new configuration option `trackAutomaticEvents` with default value `true`
+
+### 0.1.0 (2022-05-03)
 
 ### Features
 
