@@ -57,7 +57,7 @@
     "@types/mixpanel-browser": "^2.38.0",
     "eslint": "^7.11.0",
     "prettier": "~2.2.0",
-    "prettier-plugin-java": "~1.0.0",
+    "prettier-plugin-java": "~1.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.32.0",
     "swiftlint": "^1.0.1",
