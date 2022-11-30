@@ -190,6 +190,13 @@ export interface MixpanelPlugin {
   setProfileUnion(options: ProfileProperties): Promise<void>;
   
   /**
+   * Permanently deletes the current people analytics profile from Mixpanel (using the current distinctId).
+   * 
+   * @platforms ios, android, web
+   */
+  deleteProfile(): Promise<void>;
+
+  /**
    * Track money spent by the current user for revenue analytics and associate properties with the charge. Properties is optional.
    *
    * @platforms ios, android, web

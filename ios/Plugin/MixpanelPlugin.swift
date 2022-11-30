@@ -93,6 +93,11 @@ public class MixpanelPlugin: CAPPlugin {
         Mixpanel.mainInstance().people.union(properties: properties)
         call.resolve()
     }
+    
+    @objc func deleteProfile(_ call: CAPPluginCall) {
+        Mixpanel.mainInstance().people.deleteUser()
+        call.resolve()
+    }
 
     @objc func trackCharge(_ call: CAPPluginCall) {
         let amount: Double = call.getDouble("amount")!

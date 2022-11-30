@@ -46,6 +46,7 @@ npx cap sync
 * [`registerSuperProperties(...)`](#registersuperproperties)
 * [`setProfile(...)`](#setprofile)
 * [`setProfileUnion(...)`](#setprofileunion)
+* [`deleteProfile()`](#deleteprofile)
 * [`trackCharge(...)`](#trackcharge)
 * [`flush()`](#flush)
 * [`optInTracking(...)`](#optintracking)
@@ -206,6 +207,15 @@ Union list properties.
 | Param         | Type                                                            |
 | ------------- | --------------------------------------------------------------- |
 | **`options`** | <code><a href="#profileproperties">ProfileProperties</a></code> |
+
+--------------------
+
+
+### deleteProfile()
+
+```typescript
+deleteProfile() => Promise<void>
+```
 
 --------------------
 
