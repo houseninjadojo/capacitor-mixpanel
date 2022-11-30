@@ -17,6 +17,7 @@ export interface MixpanelPlugin {
   registerSuperProperties(options: { properties: any }): Promise<void>;
   setProfile(options: { properties: any }): Promise<void>;
   setProfileUnion(options: { properties: any }): Promise<void>;
+  deleteProfile(): Promise<void>;
   trackCharge(options: { amount: number; properties: any }): Promise<void>;
   flush(): Promise<void>;
   optInTracking(options: { distinctId?: string, properties?: any }): Promise<void>;

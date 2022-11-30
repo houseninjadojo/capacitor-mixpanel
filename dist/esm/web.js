@@ -58,6 +58,9 @@ export class MixpanelWeb extends WebPlugin {
         mixpanel.people.union(options.properties);
         return Promise.resolve();
     }
+    async deleteProfile() {
+        mixpanel.people.delete_user();
+    }
     async trackCharge(options) {
         mixpanel.people.track_charge(options.amount, options.properties);
     }

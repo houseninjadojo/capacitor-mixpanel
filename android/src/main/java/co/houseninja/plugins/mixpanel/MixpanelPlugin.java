@@ -120,6 +120,12 @@ public class MixpanelPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void deleteProfile(PluginCall call) {
+        mixpanel.getPeople().deleteUser();
+        call.resolve();
+    }
+
+    @PluginMethod
     public void trackCharge(PluginCall call) {
         Double amount = call.getDouble("amount");
         JSObject properties = call.getObject("properties");

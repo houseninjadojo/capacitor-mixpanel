@@ -42,6 +42,7 @@ export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     setProfileUnion(options: {
         properties: any;
     }): Promise<void>;
+    deleteProfile(): Promise<void>;
     trackCharge(options: {
         amount: number;
         properties: any;

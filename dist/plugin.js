@@ -67,6 +67,9 @@ var capacitorMixpanel = (function (exports, core, mixpanel) {
             mixpanel__default["default"].people.union(options.properties);
             return Promise.resolve();
         }
+        async deleteProfile() {
+            mixpanel__default["default"].people.delete_user();
+        }
         async trackCharge(options) {
             mixpanel__default["default"].people.track_charge(options.amount, options.properties);
         }

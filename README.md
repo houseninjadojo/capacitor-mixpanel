@@ -46,6 +46,7 @@ npx cap sync
 * [`registerSuperProperties(...)`](#registersuperproperties)
 * [`setProfile(...)`](#setprofile)
 * [`setProfileUnion(...)`](#setprofileunion)
+* [`deleteProfile()`](#deleteprofile)
 * [`trackCharge(...)`](#trackcharge)
 * [`flush()`](#flush)
 * [`optInTracking(...)`](#optintracking)
@@ -183,6 +184,15 @@ setProfileUnion(options: { properties: any; }) => Promise<void>
 | Param         | Type                              |
 | ------------- | --------------------------------- |
 | **`options`** | <code>{ properties: any; }</code> |
+
+--------------------
+
+
+### deleteProfile()
+
+```typescript
+deleteProfile() => Promise<void>
+```
 
 --------------------
 

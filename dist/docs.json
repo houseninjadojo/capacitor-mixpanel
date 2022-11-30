@@ -158,6 +158,16 @@
         "slug": "setprofileunion"
       },
       {
+        "name": "deleteProfile",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "deleteprofile"
+      },
+      {
         "name": "trackCharge",
         "signature": "(options: { amount: number; properties: any; }) => Promise<void>",
         "parameters": [

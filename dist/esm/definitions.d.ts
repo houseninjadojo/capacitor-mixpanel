@@ -33,6 +33,7 @@ export interface MixpanelPlugin {
     setProfileUnion(options: {
         properties: any;
     }): Promise<void>;
+    deleteProfile(): Promise<void>;
     trackCharge(options: {
         amount: number;
         properties: any;
