@@ -17,10 +17,11 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     window.mixpanel = mixpanel;
   }
 
-  async initialize(options: { token: string; autotrack: boolean; debug: boolean }): Promise<void> {
+  async initialize(options: { token: string; autotrack?: boolean; optOutByDefault?: boolean; debug?: boolean }): Promise<void> {
     mixpanel.init(options.token, {
-      autotrack: options.autotrack,
-      debug: options.debug,
+      autotrack: options.autotrack ?? true,
+      opt_out_tracking_by_default: options.optOutByDefault ?? false,
+      debug: options.debug ?? false,
     });
     return Promise.resolve();
   }
@@ -84,5 +85,13 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
 
   async flush(): Promise<void> {
     // NOT IMPLEMENTED FOR WEB
+  }
+
+  async optInTracking(options: { distinctId?: string; properties?: any }): Promise<void> {
+    mixpanel.opt_in_tracking(options.properties);
+  }
+
+  async optOutTracking(): Promise<void> {
+    mixpanel.opt_out_tracking();
   }
 }
