@@ -12,10 +12,12 @@ public class MixpanelPlugin: CAPPlugin {
         let token = getConfigValue("iosToken") as? String ?? "ADD_IN_CAPACITOR_CONFIG_JSON"
         let serverURL = getConfigValue("serverUrl") as? String ?? nil
         let trackAutomaticEvents = getConfigValue("trackAutomaticEvents") as? Bool ?? true
+        let optOutTrackingByDefault = getConfigValue("optOutTrackingByDefault") as? Bool ?? false
 
         Mixpanel.initialize(
             token: token,
             trackAutomaticEvents: trackAutomaticEvents,
+            optOutTrackingByDefault: optOutTrackingByDefault,
             serverURL: serverURL
         )
     }
@@ -100,5 +102,19 @@ public class MixpanelPlugin: CAPPlugin {
 
     @objc func flush(_ call: CAPPluginCall) {
         Mixpanel.mainInstance().flush(completion: call.resolve)
+    }
+    
+    @objc func optInTracking(_ call: CAPPluginCall) {
+        let distinctId: String = call.getString("distinctId")!
+        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+            return
+        }
+        Mixpanel.mainInstance().optInTracking(distinctId: distinctId, properties: properties)
+        call.resolve()
+    }
+    
+    @objc func optOutTracking(_ call: CAPPluginCall) {
+        Mixpanel.mainInstance().optOutTracking()
+        call.resolve()
     }
 }

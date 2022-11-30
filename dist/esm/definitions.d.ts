@@ -1,8 +1,9 @@
 export interface MixpanelPlugin {
     initialize(options: {
         token: string;
-        autotrack: boolean;
-        debug: boolean;
+        autotrack?: boolean;
+        optOutByDefault?: boolean;
+        debug?: boolean;
     }): Promise<void>;
     distinctId(): Promise<{
         value: string;
@@ -37,6 +38,11 @@ export interface MixpanelPlugin {
         properties: any;
     }): Promise<void>;
     flush(): Promise<void>;
+    optInTracking(options: {
+        distinctId?: string;
+        properties?: any;
+    }): Promise<void>;
+    optOutTracking(): Promise<void>;
 }
 declare module '@capacitor/cli' {
     interface PluginsConfig {
@@ -62,6 +68,13 @@ declare module '@capacitor/cli' {
              * @default true
              */
             trackAutomaticEvents?: boolean;
+            /**
+             * Optional. Whether or not Mixpanel can start tracking immediately. Default is false.
+             *
+             * @required
+             * @default false
+             */
+            optOutTrackingByDefault?: boolean;
             /**
              * Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.
              *

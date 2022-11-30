@@ -7,9 +7,11 @@ export class MixpanelWeb extends WebPlugin {
         window.mixpanel = mixpanel;
     }
     async initialize(options) {
+        var _a, _b, _c;
         mixpanel.init(options.token, {
-            autotrack: options.autotrack,
-            debug: options.debug,
+            autotrack: (_a = options.autotrack) !== null && _a !== void 0 ? _a : true,
+            opt_out_tracking_by_default: (_b = options.optOutByDefault) !== null && _b !== void 0 ? _b : false,
+            debug: (_c = options.debug) !== null && _c !== void 0 ? _c : false,
         });
         return Promise.resolve();
     }
@@ -61,6 +63,12 @@ export class MixpanelWeb extends WebPlugin {
     }
     async flush() {
         // NOT IMPLEMENTED FOR WEB
+    }
+    async optInTracking(options) {
+        mixpanel.opt_in_tracking(options.properties);
+    }
+    async optOutTracking() {
+        mixpanel.opt_out_tracking();
     }
 }
 //# sourceMappingURL=web.js.map

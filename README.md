@@ -48,6 +48,8 @@ npx cap sync
 * [`setProfileUnion(...)`](#setprofileunion)
 * [`trackCharge(...)`](#trackcharge)
 * [`flush()`](#flush)
+* [`optInTracking(...)`](#optintracking)
+* [`optOutTracking()`](#optouttracking)
 
 </docgen-index>
 
@@ -57,12 +59,12 @@ npx cap sync
 ### initialize(...)
 
 ```typescript
-initialize(options: { token: string; autotrack: boolean; debug: boolean; }) => Promise<void>
+initialize(options: { token: string; autotrack?: boolean; optOutByDefault?: boolean; debug?: boolean; }) => Promise<void>
 ```
 
-| Param         | Type                                                                |
-| ------------- | ------------------------------------------------------------------- |
-| **`options`** | <code>{ token: string; autotrack: boolean; debug: boolean; }</code> |
+| Param         | Type                                                                                             |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| **`options`** | <code>{ token: string; autotrack?: boolean; optOutByDefault?: boolean; debug?: boolean; }</code> |
 
 --------------------
 
@@ -202,6 +204,28 @@ trackCharge(options: { amount: number; properties: any; }) => Promise<void>
 
 ```typescript
 flush() => Promise<void>
+```
+
+--------------------
+
+
+### optInTracking(...)
+
+```typescript
+optInTracking(options: { distinctId?: string; properties?: any; }) => Promise<void>
+```
+
+| Param         | Type                                                    |
+| ------------- | ------------------------------------------------------- |
+| **`options`** | <code>{ distinctId?: string; properties?: any; }</code> |
+
+--------------------
+
+
+### optOutTracking()
+
+```typescript
+optOutTracking() => Promise<void>
 ```
 
 --------------------

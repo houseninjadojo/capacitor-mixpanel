@@ -10,8 +10,9 @@ export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     constructor();
     initialize(options: {
         token: string;
-        autotrack: boolean;
-        debug: boolean;
+        autotrack?: boolean;
+        optOutByDefault?: boolean;
+        debug?: boolean;
     }): Promise<void>;
     distinctId(): Promise<{
         value: string;
@@ -46,4 +47,9 @@ export declare class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
         properties: any;
     }): Promise<void>;
     flush(): Promise<void>;
+    optInTracking(options: {
+        distinctId?: string;
+        properties?: any;
+    }): Promise<void>;
+    optOutTracking(): Promise<void>;
 }
