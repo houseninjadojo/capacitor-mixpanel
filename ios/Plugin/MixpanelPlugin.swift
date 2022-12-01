@@ -9,10 +9,10 @@ import Mixpanel
 @objc(MixpanelPlugin)
 public class MixpanelPlugin: CAPPlugin {
     public override func load() {
-        let token = getConfigValue("iosToken") as? String ?? "ADD_IN_CAPACITOR_CONFIG_JSON"
-        let serverURL = getConfigValue("serverUrl") as? String ?? nil
-        let trackAutomaticEvents = getConfigValue("trackAutomaticEvents") as? Bool ?? true
-        let optOutTrackingByDefault = getConfigValue("optOutTrackingByDefault") as? Bool ?? false
+        let token = getConfig().getString("token") ?? "MIXPANEL_TOKEN_REQUIRED"
+        let serverURL = getConfig().getString("serverUrl", "https://api.mixpanel.com")
+        let optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false)
+        let trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true)
 
         Mixpanel.initialize(
             token: token,
@@ -33,10 +33,8 @@ public class MixpanelPlugin: CAPPlugin {
 
     @objc func track(_ call: CAPPluginCall) {
         let event = call.getString("event") ?? ""
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
-            return
-        }
-        Mixpanel.mainInstance().track(event: event, properties: properties)
+        let props = call.getObject("properties") as? Properties
+        Mixpanel.mainInstance().track(event: event, properties: props)
         call.resolve()
     }
 
@@ -71,7 +69,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func registerSuperProperties(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().registerSuperProperties(properties)
@@ -79,7 +77,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func setProfile(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().people.set(properties: properties)
@@ -87,7 +85,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
     
     @objc func setProfileUnion(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().people.union(properties: properties)
@@ -111,7 +109,7 @@ public class MixpanelPlugin: CAPPlugin {
     
     @objc func optInTracking(_ call: CAPPluginCall) {
         let distinctId: String = call.getString("distinctId")!
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().optInTracking(distinctId: distinctId, properties: properties)

@@ -12,16 +12,14 @@ Add the following plugin configuration:
 
 ```js
 {
- …
-  "plugins": {
-   "Mixpanel": {
-      "iosToken": "ios-xxx",
-      "androidToken": "android-yyy",
-      "trackAutomaticEvents": true, // optional, default: true
-      "serverURL": "https://api-eu.mixpanel.com/", // optional, default: "https://api.mixpanel.com/"
-    }
-  }
-…
+  ...
+  "Mixpanel": {
+    "token": "token-abcdefg1234",
+    "trackAutomaticEvents": true, // optional, default: true
+    "optOutByDefault": false, // optional, default: false
+    "serverURL": "https://api-eu.mixpanel.com/", // optional, default: "https://api.mixpanel.com/"
+  },
+  ...
 }
 ```
 
