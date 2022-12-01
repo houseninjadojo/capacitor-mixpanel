@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v1.1.0...capacitor-mixpanel-v2.0.0) (2022-12-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **config:** deprecate `iosToken` and `androidToken`, use config `token` ([#40](https://github.com/houseninjadojo/capacitor-mixpanel/issues/40))
+
+### Bug Fixes
+
+* **config:** deprecate `iosToken` and `androidToken`, use config `token` ([#40](https://github.com/houseninjadojo/capacitor-mixpanel/issues/40)) ([f64b757](https://github.com/houseninjadojo/capacitor-mixpanel/commit/f64b757e46ed55d05a7ff76c0a3c1bf1dc7fd506))
+
 ## [1.1.0](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v1.0.1...capacitor-mixpanel-v1.1.0) (2022-12-01)
 
 
