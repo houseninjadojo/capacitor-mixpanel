@@ -69,7 +69,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func registerSuperProperties(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().registerSuperProperties(properties)
@@ -77,7 +77,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func setProfile(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().people.set(properties: properties)
@@ -85,7 +85,7 @@ public class MixpanelPlugin: CAPPlugin {
     }
     
     @objc func setProfileUnion(_ call: CAPPluginCall) {
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().people.union(properties: properties)
@@ -109,7 +109,7 @@ public class MixpanelPlugin: CAPPlugin {
     
     @objc func optInTracking(_ call: CAPPluginCall) {
         let distinctId: String = call.getString("distinctId")!
-        guard let properties = call.getObject("properties") as! Dictionary<String,MixpanelType>? else {
+        guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().optInTracking(distinctId: distinctId, properties: properties)
