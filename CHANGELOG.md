@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.0.1 (2022-12-01)
+
+### Release
+
+* Update dependencies
+
+## 1.0.0-beta.2 (2022-09-13)
+
+### Bugfixes
+
+* Set peer dependency for capacitor/core to v4
+
+## 1.0.0-beta.1 (2022-08-29)
+
+### Release
+
+* Upgrade plugin for Capacitor 4 compatibility
+
 ## 0.2.0 (2022-08-29)
 
 ### Features
