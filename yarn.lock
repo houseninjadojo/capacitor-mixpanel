@@ -23,13 +23,15 @@
     "chalk" "^2.0.0"
     "js-tokens" "^4.0.0"
 
-"@capacitor/android@^4.0.0":
-  "integrity" "sha512-aYHvpYVlS6WC+bG9jJfwqgHMxTw3e8f3taNnl/y9qCjglmMmtFcZWFAVLlOleVK4Q7olSirqjx37f0ppvxRTLg=="
-  "resolved" "https://registry.npmjs.org/@capacitor/android/-/android-4.1.0.tgz"
-  "version" "4.1.0"
+"@capacitor/android@^4.5.0":
+  "integrity" "sha512-GRoQ0Q1XOupU4pK3aipWfwCGXRuAq32IHpOoNSZm3Enu1/FhoOlIvHMlnnIQTpq6sBye/cqBIuYsOpPBMi3VNg=="
+  "resolved" "https://registry.npmjs.org/@capacitor/android/-/android-4.5.0.tgz"
+  "version" "4.5.0"
 
-"@capacitor/cli@^4.0.0":
-  "version" "4.1.0"
+"@capacitor/cli@^4.5.0":
+  "integrity" "sha512-GwWE5Ef6LsdD7DzVrdzVMtU+UZbpLjKR7uNsuSA44MaSlxqMuq2Njdl0nWYp5Oj/kacOsHKC6USbLzwe4S5caw=="
+  "resolved" "https://registry.npmjs.org/@capacitor/cli/-/cli-4.5.0.tgz"
+  "version" "4.5.0"
   dependencies:
     "@ionic/cli-framework-output" "^2.2.5"
     "@ionic/utils-fs" "^3.1.6"
@@ -49,28 +51,28 @@
     "tslib" "^2.4.0"
     "xml2js" "^0.4.23"
 
-"@capacitor/core@^4.0.0":
-  "integrity" "sha512-bMYFnC5l5n11D/kLTz9TOOJfUH+nQqYRwzG7h5h4AXIm8aFxH5ZY3iFlDZd7R4xcyrlnfxzfoooSH9trPjRBLA=="
-  "resolved" "https://registry.npmjs.org/@capacitor/core/-/core-4.1.0.tgz"
-  "version" "4.1.0"
+"@capacitor/core@^4.4.0", "@capacitor/core@^4.5.0":
+  "integrity" "sha512-afx+hvQIrPcHbTdsBIryE96JlfSt1Rw8cWhb1J34v6Exje6zQZQa3fQZ6gcgkON+zkDIK8u3yRcIps0xMUdsMQ=="
+  "resolved" "https://registry.npmjs.org/@capacitor/core/-/core-4.5.0.tgz"
+  "version" "4.5.0"
   dependencies:
     "tslib" "^2.1.0"
 
-"@capacitor/docgen@^0.0.18":
-  "integrity" "sha512-BVqzrbSi9u5IaKRLlG0H/ZW8M23FDJpH2018RTGVHRn2Yk3na9jOcItBc3r+rYiwgRgAHylNw9Lt7+lWmJBD3Q=="
-  "resolved" "https://registry.npmjs.org/@capacitor/docgen/-/docgen-0.0.18.tgz"
-  "version" "0.0.18"
+"@capacitor/docgen@^0.2.0":
+  "integrity" "sha512-JoKuEx4Ep9LVnTY1I4zaoQPlxy+AWVMwwOSou/U9f/nXsL391aBRH7hC12lKNZGetiComnt369vQ+/r7n9iXfQ=="
+  "resolved" "https://registry.npmjs.org/@capacitor/docgen/-/docgen-0.2.0.tgz"
+  "version" "0.2.0"
   dependencies:
-    "@types/node" "^14.17.3"
-    "colorette" "^1.2.2"
-    "github-slugger" "^1.3.0"
+    "@types/node" "^14.18.0"
+    "colorette" "^2.0.16"
+    "github-slugger" "^1.4.0"
     "minimist" "^1.2.5"
     "typescript" "~4.2.4"
 
-"@capacitor/ios@^4.0.0":
-  "integrity" "sha512-zkv48Xc5QwdL7TIT4YpXwgISrA5Cuy59KyN+uq3ovr+L/y5SgtKAOg7pATRBYT7CFgFLqkey/PQKcTjbcxhyaA=="
-  "resolved" "https://registry.npmjs.org/@capacitor/ios/-/ios-4.1.0.tgz"
-  "version" "4.1.0"
+"@capacitor/ios@^4.5.0":
+  "integrity" "sha512-2E7hqKqZOXPKEQqvdp2g68KtfjIkGEPmLpM0vRTUug08l4C/XoPufPnHiT1Y6dEXk8c02NdnilxarfbyaajQvg=="
+  "resolved" "https://registry.npmjs.org/@capacitor/ios/-/ios-4.5.0.tgz"
+  "version" "4.5.0"
 
 "@eslint/eslintrc@^0.4.3":
   "integrity" "sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw=="
@@ -120,10 +122,10 @@
     "eslint-config-prettier" "^6.11.0"
     "eslint-plugin-import" "^2.22.0"
 
-"@ionic/prettier-config@^1.0.1":
-  "integrity" "sha512-/v8UOW7rxkw/hvrRe/QfjlQsdjkm3sfAHoE3uqffO5BoNGijQMARrT32JT9Ei0g6KySXPyxxW+7LzPHrQmfzCw=="
-  "resolved" "https://registry.npmjs.org/@ionic/prettier-config/-/prettier-config-1.0.1.tgz"
-  "version" "1.0.1"
+"@ionic/prettier-config@^2.0.0":
+  "integrity" "sha512-ageMx54B9qqS1scnFW3kQW2NW8HyXwUM/p9c1YSWFKr6Yct7YVNbJFY3EcFapaNTiDnwo+GLlPRt+wST6E8AfA=="
+  "resolved" "https://registry.npmjs.org/@ionic/prettier-config/-/prettier-config-2.0.0.tgz"
+  "version" "2.0.0"
 
 "@ionic/swiftlint-config@^1.1.2":
   "integrity" "sha512-UbE1AIlTowt9uR7fMzRtbQX4URcyuok7mcpdJfFDHAIGM6nDjohYMke+6xOr6ZYlLnEyVmBGNEg0+grEYRgcVg=="
@@ -248,7 +250,7 @@
   "resolved" "https://registry.npmjs.org/@types/mixpanel-browser/-/mixpanel-browser-2.38.0.tgz"
   "version" "2.38.0"
 
-"@types/node@*", "@types/node@^14.17.3":
+"@types/node@*", "@types/node@^14.18.0":
   "integrity" "sha512-q4jlIR71hUpWTnGhXWcakgkZeHa3CCjcQcnuzU8M891BAWA2jHiziiWEPEkdS5pFsz7H9HJiy8BrK7tBRNrY7A=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-14.18.12.tgz"
   "version" "14.18.12"
@@ -545,10 +547,10 @@
   "resolved" "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz"
   "version" "1.1.3"
 
-"colorette@^1.2.2":
-  "integrity" "sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g=="
-  "resolved" "https://registry.npmjs.org/colorette/-/colorette-1.4.0.tgz"
-  "version" "1.4.0"
+"colorette@^2.0.16":
+  "integrity" "sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ=="
+  "resolved" "https://registry.npmjs.org/colorette/-/colorette-2.0.19.tgz"
+  "version" "2.0.19"
 
 "commander@^9.3.0":
   "integrity" "sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw=="
@@ -1028,7 +1030,7 @@
     "call-bind" "^1.0.2"
     "get-intrinsic" "^1.1.1"
 
-"github-slugger@^1.3.0":
+"github-slugger@^1.4.0":
   "integrity" "sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ=="
   "resolved" "https://registry.npmjs.org/github-slugger/-/github-slugger-1.4.0.tgz"
   "version" "1.4.0"
@@ -1286,10 +1288,10 @@
   "resolved" "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   "version" "2.0.0"
 
-"java-parser@1.0.2":
-  "integrity" "sha512-lBXc+F62ds2W83eH5MwGnzuWdb6kgGBV0x0R7w0B4JKGDrJzolMUEhRMzzzlIX68HvRU7XtfPon22YaB+dVg+A=="
-  "resolved" "https://registry.npmjs.org/java-parser/-/java-parser-1.0.2.tgz"
-  "version" "1.0.2"
+"java-parser@2.0.3":
+  "integrity" "sha512-z+ZsqcY3LCN0NPK1KnC7AXFHQxtzlsADJ2OVQmenKS/4gHBQ6SkEQYIMVV/2WrxRBMWXMXW7KeOVmXPLHCMRAQ=="
+  "resolved" "https://registry.npmjs.org/java-parser/-/java-parser-2.0.3.tgz"
+  "version" "2.0.3"
   dependencies:
     "chevrotain" "6.5.0"
     "lodash" "4.17.21"
@@ -1619,24 +1621,24 @@
   "resolved" "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   "version" "1.2.1"
 
-"prettier-plugin-java@~1.0.2":
-  "integrity" "sha512-YgcN1WGZlrH0E+bHdqtIYtfDp6k2PHBnIaGjzdff/7t/NyDWAA6ypAmnD7YQVG2OuoIaXYkC37HN7cz68lLWLg=="
-  "resolved" "https://registry.npmjs.org/prettier-plugin-java/-/prettier-plugin-java-1.0.2.tgz"
-  "version" "1.0.2"
+"prettier-plugin-java@~2.0.0":
+  "integrity" "sha512-ct7Zgog2XUpZ+olF3Ed4gPBNU7aWBu0cnpgDX7eqs0IZVH+9ZAduRkaJ0HlreoOm7SdUOc7UoKK1vk3T/coEoQ=="
+  "resolved" "https://registry.npmjs.org/prettier-plugin-java/-/prettier-plugin-java-2.0.0.tgz"
+  "version" "2.0.0"
   dependencies:
-    "java-parser" "1.0.2"
+    "java-parser" "2.0.3"
     "lodash" "4.17.21"
-    "prettier" "2.2.1"
+    "prettier" "2.8.0"
 
 "prettier@^2.0.0", "prettier@~2.3.0":
   "integrity" "sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ=="
   "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.3.2.tgz"
   "version" "2.3.2"
 
-"prettier@2.2.1":
-  "integrity" "sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q=="
-  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.2.1.tgz"
-  "version" "2.2.1"
+"prettier@2.8.0":
+  "integrity" "sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.8.0.tgz"
+  "version" "2.8.0"
 
 "progress@^2.0.0":
   "integrity" "sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA=="
