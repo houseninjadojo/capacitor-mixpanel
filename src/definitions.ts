@@ -233,25 +233,16 @@ declare module '@capacitor/cli' {
   export interface PluginsConfig {
     Mixpanel?: {
       /**
-       * iOS Mixpanel Token.
+       * Mixpanel Token
        *
        * @required
        * @example "asdf1234asdf1234"
        */
-      iosToken?: string;
-
-      /**
-       * Android Mixpanel Token.
-       *
-       * @required
-       * @example "asdf1234asdf1234"
-       */
-      androidToken?: string;
+      token: string;
 
       /**
        * Optional. Whether or not to collect common mobile events. Default is true.
        *
-       * @required
        * @default true
        */
       trackAutomaticEvents?: boolean;
@@ -267,10 +258,10 @@ declare module '@capacitor/cli' {
       /**
        * Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.
        *
-       * @default null
+       * @default "https://api.mixpanel.com"
        * @example "https://api-eu.mixpanel.com/"
        */
-      serverURL?: boolean;
+      serverURL?: string;
     };
   }
 }

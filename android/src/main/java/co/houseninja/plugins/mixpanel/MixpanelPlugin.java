@@ -21,8 +21,8 @@ public class MixpanelPlugin extends Plugin {
 
     @Override
     public void load() {
-        String token = getConfig().getString("androidToken");
-        String serverUrl = getConfig().getString("serverUrl");
+        String token = getConfig().getString("token");
+        String serverUrl = getConfig().getString("serverUrl", "https://api.mixpanel.com");
         boolean trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true);
         boolean optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false);
 
@@ -61,7 +61,6 @@ public class MixpanelPlugin extends Plugin {
     public void identify(PluginCall call) {
         String distinctId = call.getString("distinctId");
         mixpanel.identify(distinctId);
-        mixpanel.getPeople().identify(distinctId);
         call.resolve();
     }
 
