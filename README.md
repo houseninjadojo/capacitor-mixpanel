@@ -217,6 +217,8 @@ Union list properties.
 deleteProfile() => Promise<void>
 ```
 
+Permanently deletes the current people analytics profile from Mixpanel (using the current distinctId).
+
 --------------------
 
 
