@@ -46,8 +46,11 @@ npx cap sync
 * [`registerSuperProperties(...)`](#registersuperproperties)
 * [`setProfile(...)`](#setprofile)
 * [`setProfileUnion(...)`](#setprofileunion)
+* [`deleteProfile()`](#deleteprofile)
 * [`trackCharge(...)`](#trackcharge)
 * [`flush()`](#flush)
+* [`optInTracking(...)`](#optintracking)
+* [`optOutTracking()`](#optouttracking)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -208,6 +211,17 @@ Union list properties.
 --------------------
 
 
+### deleteProfile()
+
+```typescript
+deleteProfile() => Promise<void>
+```
+
+Permanently deletes the current people analytics profile from Mixpanel (using the current distinctId).
+
+--------------------
+
+
 ### trackCharge(...)
 
 ```typescript
@@ -234,16 +248,47 @@ Uploads queued data to the Mixpanel server. (only ios, android)
 --------------------
 
 
+### optInTracking(...)
+
+```typescript
+optInTracking(options: OptInOptions) => Promise<void>
+```
+
+Opt in tracking.
+
+Use this method to opt in an already opted out user from tracking. People updates and track calls will be sent to Mixpanel after using this method.
+
+| Param         | Type                                                  |
+| ------------- | ----------------------------------------------------- |
+| **`options`** | <code><a href="#optinoptions">OptInOptions</a></code> |
+
+--------------------
+
+
+### optOutTracking()
+
+```typescript
+optOutTracking() => Promise<void>
+```
+
+Opt out tracking.
+
+This method is used to opt out tracking. This causes all events and people request no longer to be sent back to the Mixpanel server.
+
+--------------------
+
+
 ### Interfaces
 
 
 #### InitializeOptions
 
-| Prop            | Type                 | Description                    | Default            |
-| --------------- | -------------------- | ------------------------------ | ------------------ |
-| **`token`**     | <code>string</code>  | Your Mixpanel API token        |                    |
-| **`autotrack`** | <code>boolean</code> | Enable or disable autotracking | <code>true</code>  |
-| **`debug`**     | <code>boolean</code> | Enable or disable debug mode   | <code>false</code> |
+| Prop                  | Type                 | Description                                                       | Default            |
+| --------------------- | -------------------- | ----------------------------------------------------------------- | ------------------ |
+| **`token`**           | <code>string</code>  | Your Mixpanel API token                                           |                    |
+| **`autotrack`**       | <code>boolean</code> | Enable or disable autotracking                                    | <code>true</code>  |
+| **`optOutByDefault`** | <code>boolean</code> | Opting users out of tracking by this Mixpanel instance by default | <code>false</code> |
+| **`debug`**           | <code>boolean</code> | Enable or disable debug mode                                      | <code>false</code> |
 
 
 #### TrackOptions
@@ -292,5 +337,13 @@ Uploads queued data to the Mixpanel server. (only ios, android)
 | ---------------- | ------------------- | ----------------------------------------------------------------- | --------------- |
 | **`amount`**     | <code>number</code> | The amount of the transaction                                     |                 |
 | **`properties`** | <code>any</code>    | An associative array of properties to store about the transaction | <code>{}</code> |
+
+
+#### OptInOptions
+
+| Prop             | Type                | Description                                                |
+| ---------------- | ------------------- | ---------------------------------------------------------- |
+| **`distinctId`** | <code>string</code> | String that uniquely identifies the current user.          |
+| **`properties`** | <code>any</code>    | An associative array of properties to store about the user |
 
 </docgen-api>

@@ -15,6 +15,12 @@ export interface InitializeOptions {
    */
   autotrack?: boolean;
   /**
+   * Opting users out of tracking by this Mixpanel instance by default
+   * 
+   * @default false
+   */
+  optOutByDefault?: boolean;
+  /**
    * Enable or disable debug mode
    * 
    * @default false
@@ -90,6 +96,17 @@ export interface ChargeOptions {
    * An associative array of properties to store about the transaction
    * 
    * @default {}
+   */
+  properties?: any;
+}
+
+export interface OptInOptions {
+  /**
+   * String that uniquely identifies the current user.
+   */
+  distinctId?: string;
+  /**
+   * An associative array of properties to store about the user
    */
   properties?: any;
 }
@@ -173,6 +190,13 @@ export interface MixpanelPlugin {
   setProfileUnion(options: ProfileProperties): Promise<void>;
   
   /**
+   * Permanently deletes the current people analytics profile from Mixpanel (using the current distinctId).
+   * 
+   * @platforms ios, android, web
+   */
+  deleteProfile(): Promise<void>;
+
+  /**
    * Track money spent by the current user for revenue analytics and associate properties with the charge. Properties is optional.
    *
    * @platforms ios, android, web
@@ -185,6 +209,24 @@ export interface MixpanelPlugin {
    * @platforms ios, android
    */
   flush(): Promise<void>;
+
+  /**
+   * Opt in tracking.
+   *
+   * Use this method to opt in an already opted out user from tracking. People updates and track calls will be sent to Mixpanel after using this method.
+   *
+   * @platforms ios, android, web
+   */
+  optInTracking(options: OptInOptions): Promise<void>;
+
+  /**
+   * Opt out tracking.
+   *
+   * This method is used to opt out tracking. This causes all events and people request no longer to be sent back to the Mixpanel server.
+   *
+   * @platforms ios, android, web
+   */
+  optOutTracking(): Promise<void>;
 }
 
 declare module '@capacitor/cli' {
@@ -213,6 +255,14 @@ declare module '@capacitor/cli' {
        * @default true
        */
       trackAutomaticEvents?: boolean;
+
+      /**
+       * Optional. Whether or not Mixpanel can start tracking immediately. Default is false.
+       *
+       * @required
+       * @default false
+       */
+      optOutTrackingByDefault?: boolean;
 
       /**
        * Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.

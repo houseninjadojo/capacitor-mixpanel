@@ -24,8 +24,9 @@ public class MixpanelPlugin extends Plugin {
         String token = getConfig().getString("androidToken");
         String serverUrl = getConfig().getString("serverUrl");
         boolean trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true);
+        boolean optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false);
 
-        mixpanel = MixpanelAPI.getInstance(getContext(), token, trackAutomaticEvents);
+        mixpanel = MixpanelAPI.getInstance(getContext(), token, optOutTrackingByDefault, trackAutomaticEvents);
 
         if (serverUrl != null) {
             mixpanel.setServerURL(serverUrl);
@@ -119,6 +120,12 @@ public class MixpanelPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void deleteProfile(PluginCall call) {
+        mixpanel.getPeople().deleteUser();
+        call.resolve();
+    }
+
+    @PluginMethod
     public void trackCharge(PluginCall call) {
         Double amount = call.getDouble("amount");
         JSObject properties = call.getObject("properties");
@@ -129,6 +136,20 @@ public class MixpanelPlugin extends Plugin {
     @PluginMethod
     public void flush(PluginCall call) {
         mixpanel.flush();
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void optInTracking(PluginCall call) {
+        String distinctId = call.getString("distinctId");
+        JSObject properties = call.getObject("properties");
+        mixpanel.optInTracking(distinctId, properties);
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void optOutTracking(PluginCall call) {
+        mixpanel.optOutTracking();
         call.resolve();
     }
 }
