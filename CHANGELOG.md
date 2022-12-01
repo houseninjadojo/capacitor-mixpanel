@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v1.0.1...capacitor-mixpanel-v1.1.0) (2022-12-01)
+
+
+### Features
+
+* option for opt in/out by default and deleteProfile() ([#43](https://github.com/houseninjadojo/capacitor-mixpanel/issues/43)) ([df09f7e](https://github.com/houseninjadojo/capacitor-mixpanel/commit/df09f7ed37a399dd1d8cadc47bf8721ce4e620a2))
+
 ## 1.0.1 (2022-12-01)
 
 ### Release
