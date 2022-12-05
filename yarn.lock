@@ -25,8 +25,8 @@
   resolved "https://registry.npmjs.org/@capacitor/android/-/android-4.5.0.tgz"
 
 "@capacitor/cli@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.npmjs.org/@capacitor/cli/-/cli-4.5.0.tgz"
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-4.6.1.tgz#6fd109db9e96231bee638b0aab7be7c709666bf0"
   dependencies:
     "@ionic/cli-framework-output" "^2.2.5"
     "@ionic/utils-fs" "^3.1.6"
