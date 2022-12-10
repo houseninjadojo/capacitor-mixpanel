@@ -108,11 +108,15 @@ public class MixpanelPlugin: CAPPlugin {
     }
     
     @objc func optInTracking(_ call: CAPPluginCall) {
+        // TO DO: Get optInTracking working either with or without these parameters set
+        /*
         let distinctId: String = call.getString("distinctId")!
         guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().optInTracking(distinctId: distinctId, properties: properties)
+        */
+        Mixpanel.mainInstance().optInTracking()
         call.resolve()
     }
     
