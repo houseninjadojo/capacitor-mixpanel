@@ -227,6 +227,13 @@ export interface MixpanelPlugin {
    * @platforms ios, android, web
    */
   optOutTracking(): Promise<void>;
+
+  /**
+   * Returns the current opt-out status.
+   *
+   * @platforms ios, android, web
+   */
+  hasOptedOutTracking(): Promise<{ value: boolean }>;
 }
 
 declare module '@capacitor/cli' {

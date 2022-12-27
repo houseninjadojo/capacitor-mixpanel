@@ -120,4 +120,9 @@ public class MixpanelPlugin: CAPPlugin {
         Mixpanel.mainInstance().optOutTracking()
         call.resolve()
     }
+    
+    @objc func hasOptedOutTracking(_ call: CAPPluginCall) {
+        let hasOptedOut = Mixpanel.mainInstance().hasOptedOutTracking()
+        call.resolve([ "value": hasOptedOut ]);
+    }
 }

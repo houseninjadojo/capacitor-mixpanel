@@ -16,7 +16,7 @@ Add the following plugin configuration:
   "Mixpanel": {
     "token": "token-abcdefg1234",
     "trackAutomaticEvents": true, // optional, default: true
-    "optOutByDefault": false, // optional, default: false
+    "optOutTrackingByDefault": false, // optional, default: false
     "serverURL": "https://api-eu.mixpanel.com/", // optional, default: "https://api.mixpanel.com/"
   },
   ...
@@ -49,6 +49,7 @@ npx cap sync
 * [`flush()`](#flush)
 * [`optInTracking(...)`](#optintracking)
 * [`optOutTracking()`](#optouttracking)
+* [`hasOptedOutTracking()`](#hasoptedouttracking)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -272,6 +273,19 @@ optOutTracking() => Promise<void>
 Opt out tracking.
 
 This method is used to opt out tracking. This causes all events and people request no longer to be sent back to the Mixpanel server.
+
+--------------------
+
+
+### hasOptedOutTracking()
+
+```typescript
+hasOptedOutTracking() => Promise<{ value: boolean; }>
+```
+
+Returns the current opt-out status.
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 --------------------
 

@@ -98,4 +98,8 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
   async optOutTracking(): Promise<void> {
     mixpanel.opt_out_tracking();
   }
+
+  async hasOptedOutTracking(): Promise<{ value: boolean }> {
+    return { value: mixpanel.has_opted_out_tracking() };
+  }
 }
