@@ -263,6 +263,15 @@ declare module '@capacitor/cli' {
       optOutTrackingByDefault?: boolean;
 
       /**
+       * Optional. Disables ip collection on iOS devices. Default is false.
+       * For Android, this is done via a meta-data property. See {@link https://help.mixpanel.com/hc/en-us/articles/115004494803}
+       *
+       * @required
+       * @default false
+       */
+      disableIosIpCollection?: boolean;
+
+      /**
        * Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.
        *
        * @default "https://api.mixpanel.com"

@@ -13,13 +13,15 @@ public class MixpanelPlugin: CAPPlugin {
         let serverURL = getConfig().getString("serverUrl", "https://api.mixpanel.com")
         let optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false)
         let trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true)
+        let disableIpCollection = getConfig().getBoolean("disableIosIpCollection", false)
 
-        Mixpanel.initialize(
+        let instance = Mixpanel.initialize(
             token: token,
             trackAutomaticEvents: trackAutomaticEvents,
             optOutTrackingByDefault: optOutTrackingByDefault,
             serverURL: serverURL
         )
+        instance.useIPAddressForGeoLocation = !disableIpCollection
     }
 
     @objc func initialize(_ call: CAPPluginCall) {

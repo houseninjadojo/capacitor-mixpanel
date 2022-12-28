@@ -17,6 +17,7 @@ Add the following plugin configuration:
     "token": "token-abcdefg1234",
     "trackAutomaticEvents": true, // optional, default: true
     "optOutTrackingByDefault": false, // optional, default: false
+    "disableIosIpCollection": true, // optional, default: false
     "serverURL": "https://api-eu.mixpanel.com/", // optional, default: "https://api.mixpanel.com/"
   },
   ...

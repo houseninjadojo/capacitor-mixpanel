@@ -17,11 +17,12 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     window.mixpanel = mixpanel;
   }
 
-  async initialize(options: { token: string; autotrack?: boolean; optOutByDefault?: boolean; debug?: boolean }): Promise<void> {
+  async initialize(options: { token: string; autotrack?: boolean; optOutByDefault?: boolean; debug?: boolean; ipCollection?: boolean }): Promise<void> {
     mixpanel.init(options.token, {
       autotrack: options.autotrack ?? true,
       opt_out_tracking_by_default: options.optOutByDefault ?? false,
       debug: options.debug ?? false,
+      ip: options.ipCollection ?? true,
     });
     return Promise.resolve();
   }
