@@ -1,0 +1,23 @@
+- match:
+    dependency_type: all
+    update_type: security:minor
+
+- match:
+    dependency_type: all
+    update_type: semver:patch
+
+- match:
+    dependency_name: "@capacitor/*"
+    update_type: all
+
+- match:
+    dependency_name: "@ionic/*"
+    update_type: all
+
+- match:
+    dependency_name: "mixpanel-browser"
+    update_type: semver:patch
+
+- match:
+    dependency_name: "mixpanel-browser"
+    update_type: security:minor
