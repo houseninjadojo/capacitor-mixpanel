@@ -21,8 +21,8 @@
     js-tokens "^4.0.0"
 
 "@capacitor/android@^4.5.0":
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.6.1.tgz#50e437934bf535eb839266df4d60204aace79561"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.6.2.tgz#2589525479a07c153f7ffd610684c3145c322aff"
 
 "@capacitor/cli@^4.5.0":
   version "4.6.2"
