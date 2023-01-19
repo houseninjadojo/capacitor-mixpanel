@@ -63,8 +63,8 @@
     typescript "~4.2.4"
 
 "@capacitor/ios@^4.5.0":
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-4.6.1.tgz#e6c03bbf1c9bce116bfbc71cb231afbb1bd5b7fc"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-4.6.2.tgz#e0266a1998912b5e552c967c6053dc7c5d9d2851"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
