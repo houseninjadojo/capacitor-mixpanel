@@ -20,4 +20,4 @@ jobs:
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           config: .github/auto-merge.yml
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.DP_AUTOMERGE_GH_TOKEN }}
