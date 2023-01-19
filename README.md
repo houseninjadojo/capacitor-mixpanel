@@ -13,7 +13,7 @@
   <a href="https://www.npmjs.com/package/@houseninja/capacitor-mixpanel"><img src="https://img.shields.io/npm/dw/@houseninja/capacitor-mixpanel?style=flat-square" /></a>
   <a href="https://www.npmjs.com/package/@houseninja/capacitor-mixpanel"><img src="https://img.shields.io/npm/v/@houseninja/capacitor-mixpanel?style=flat-square" /></a>
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href="#contributors"><img src="https://img.shields.io/badge/all%20contributors-3-orange?style=flat-square" /></a>
+<a href="#contributors"><img src="https://img.shields.io/badge/all%20contributors-4-orange?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
@@ -409,6 +409,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/mileszim"><img src="https://avatars.githubusercontent.com/u/1849508?v=4?s=75" width="75px;" alt="Miles Zimmerman"/><br /><sub><b>Miles Zimmerman</b></sub></a><br /><a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=mileszim" title="Code">💻</a> <a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=mileszim" title="Documentation">📖</a> <a href="#maintenance-mileszim" title="Maintenance">🚧</a> <a href="#example-mileszim" title="Examples">💡</a> <a href="#platform-mileszim" title="Packaging/porting to new platform">📦</a> <a href="#plugin-mileszim" title="Plugin/utility libraries">🔌</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://soundtrackcentral.com/"><img src="https://avatars.githubusercontent.com/u/6739666?v=4?s=75" width="75px;" alt="Adam C"/><br /><sub><b>Adam C</b></sub></a><br /><a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=tetsuwanadam" title="Code">💻</a> <a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=tetsuwanadam" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/chvonrohr"><img src="https://avatars.githubusercontent.com/u/1733057?v=4?s=75" width="75px;" alt="Christian von Rohr"/><br /><sub><b>Christian von Rohr</b></sub></a><br /><a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=chvonrohr" title="Code">💻</a> <a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=chvonrohr" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mfrey-WELL"><img src="https://avatars.githubusercontent.com/u/99006448?v=4?s=75" width="75px;" alt="Matt"/><br /><sub><b>Matt</b></sub></a><br /><a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=mfrey-WELL" title="Code">💻</a> <a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=mfrey-WELL" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

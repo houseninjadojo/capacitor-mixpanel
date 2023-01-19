@@ -44,6 +44,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "mfrey-WELL",
+      "name": "Matt",
+      "avatar_url": "https://avatars.githubusercontent.com/u/99006448?v=4",
+      "profile": "https://github.com/mfrey-WELL",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
