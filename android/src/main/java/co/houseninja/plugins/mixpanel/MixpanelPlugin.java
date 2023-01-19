@@ -1,22 +1,19 @@
 package co.houseninja.plugins.mixpanel;
 
 import android.util.Log;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
-
-import java.util.Iterator;
-
 @CapacitorPlugin(name = "Mixpanel")
 public class MixpanelPlugin extends Plugin {
+
     private MixpanelAPI mixpanel;
 
     @Override

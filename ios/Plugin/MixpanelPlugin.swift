@@ -8,7 +8,7 @@ import Mixpanel
  */
 @objc(MixpanelPlugin)
 public class MixpanelPlugin: CAPPlugin {
-    public override func load() {
+    override public func load() {
         let token = getConfig().getString("token") ?? "MIXPANEL_TOKEN_REQUIRED"
         let serverURL = getConfig().getString("serverUrl", "https://api.mixpanel.com")
         let optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false)
@@ -27,10 +27,10 @@ public class MixpanelPlugin: CAPPlugin {
     @objc func initialize(_ call: CAPPluginCall) {
         call.unimplemented("Not implemented on iOS. Mixpanel is initialized automatically.")
     }
-    
+
     @objc func distinctId(_ call: CAPPluginCall) {
         let distinctId = Mixpanel.mainInstance().distinctId
-        call.resolve([ "value": distinctId ]);
+        call.resolve([ "value": distinctId ])
     }
 
     @objc func track(_ call: CAPPluginCall) {
@@ -85,7 +85,7 @@ public class MixpanelPlugin: CAPPlugin {
         Mixpanel.mainInstance().people.set(properties: properties)
         call.resolve()
     }
-    
+
     @objc func setProfileUnion(_ call: CAPPluginCall) {
         guard let properties = call.getObject("properties") as? Properties else {
             return
@@ -93,7 +93,7 @@ public class MixpanelPlugin: CAPPlugin {
         Mixpanel.mainInstance().people.union(properties: properties)
         call.resolve()
     }
-    
+
     @objc func deleteProfile(_ call: CAPPluginCall) {
         Mixpanel.mainInstance().people.deleteUser()
         call.resolve()
@@ -108,14 +108,14 @@ public class MixpanelPlugin: CAPPlugin {
     @objc func flush(_ call: CAPPluginCall) {
         Mixpanel.mainInstance().flush(completion: call.resolve)
     }
-    
+
     @objc func optInTracking(_ call: CAPPluginCall) {
         let distinctId = call.getString("distinctId")
         let properties = call.getObject("properties") as? Properties
         Mixpanel.mainInstance().optInTracking(distinctId: distinctId, properties: properties)
         call.resolve()
     }
-    
+
     @objc func optOutTracking(_ call: CAPPluginCall) {
         Mixpanel.mainInstance().optOutTracking()
         call.resolve()
