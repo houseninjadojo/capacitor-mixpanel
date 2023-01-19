@@ -21,12 +21,12 @@
     js-tokens "^4.0.0"
 
 "@capacitor/android@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.npmjs.org/@capacitor/android/-/android-4.5.0.tgz"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.6.2.tgz#2589525479a07c153f7ffd610684c3145c322aff"
 
 "@capacitor/cli@^4.5.0":
-  version "4.6.1"
-  resolved "https://registry.npmjs.org/@capacitor/cli/-/cli-4.6.1.tgz"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-4.6.2.tgz#7f471dfddaebc665a6936751fb91b1c43df3bb60"
   dependencies:
     "@ionic/cli-framework-output" "^2.2.5"
     "@ionic/utils-fs" "^3.1.6"
@@ -63,8 +63,8 @@
     typescript "~4.2.4"
 
 "@capacitor/ios@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.npmjs.org/@capacitor/ios/-/ios-4.5.0.tgz"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-4.6.2.tgz#e0266a1998912b5e552c967c6053dc7c5d9d2851"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -1135,8 +1135,8 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
 
 json5@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz"
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.2.tgz#63d98d60f21b313b77c4d6da18bfa69d80e1d593"
   dependencies:
     minimist "^1.2.0"
 
@@ -1210,8 +1210,8 @@ minimatch@^3.0.4, minimatch@^3.1.2:
     brace-expansion "^1.1.7"
 
 minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
 
 minipass@^3.0.0:
   version "3.3.4"
@@ -1394,9 +1394,9 @@ prettier@2.8.0:
   version "2.8.0"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.8.0.tgz"
 
-prettier@~2.3.0:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.3.2.tgz"
+prettier@~2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
 
 progress@^2.0.0:
   version "2.0.3"
