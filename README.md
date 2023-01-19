@@ -1,6 +1,28 @@
-# @houseninja/capacitor-mixpanel
+<p align="center"><br><img src="https://user-images.githubusercontent.com/236501/85893648-1c92e880-b7a8-11ea-926d-95355b8175c7.png" width="128" height="128" /></p>
+<h3 align="center">Capacitor Mixpanel</h3>
+<p align="center"><strong><code>@houseninja/capacitor-mixpanel</code></strong></p>
+<p align="center">
+  Capacitor plugin for Mixpanel
+</p>
 
-Capacitor plugin for Mixpanel
+<p align="center">
+  <img src="https://img.shields.io/maintenance/yes/2023?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@houseninja/capacitor-mixpanel"><img src="https://img.shields.io/npm/l/@houseninja/capacitor-mixpanel?style=flat-square" /></a>
+  <img src="https://img.shields.io/github/last-commit/houseninjadojo/capacitor-mixpanel?style=flat-square"></img>
+<br>
+  <a href="https://www.npmjs.com/package/@houseninja/capacitor-mixpanel"><img src="https://img.shields.io/npm/dw/@houseninja/capacitor-mixpanel?style=flat-square" /></a>
+  <a href="https://www.npmjs.com/package/@houseninja/capacitor-mixpanel"><img src="https://img.shields.io/npm/v/@houseninja/capacitor-mixpanel?style=flat-square" /></a>
+  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+<a href="#contributors"><img src="https://img.shields.io/badge/all%20contributors-2-orange?style=flat-square" /></a>
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+</p>
+
+## Maintainers
+
+| Maintainer      | GitHub                                              | Social                                    |
+| --------------- | --------------------------------------------------- | ----------------------------------------- |
+| Miles Zimmerman | [mileszim](https://github.com/mileszim)             | [@mileszim](https://twitter.com/mileszim) |
+| House Ninja     | [houseninjadojo](https://github.com/houseninjadojo) |                                           |
 
 ## Install
 
@@ -34,24 +56,37 @@ npx cap sync
 
 <docgen-index>
 
-* [`initialize(...)`](#initialize)
-* [`distinctId()`](#distinctid)
-* [`track(...)`](#track)
-* [`identify(...)`](#identify)
-* [`alias(...)`](#alias)
-* [`reset()`](#reset)
-* [`clearSuperProperties()`](#clearsuperproperties)
-* [`currentSuperProperties()`](#currentsuperproperties)
-* [`registerSuperProperties(...)`](#registersuperproperties)
-* [`setProfile(...)`](#setprofile)
-* [`setProfileUnion(...)`](#setprofileunion)
-* [`deleteProfile()`](#deleteprofile)
-* [`trackCharge(...)`](#trackcharge)
-* [`flush()`](#flush)
-* [`optInTracking(...)`](#optintracking)
-* [`optOutTracking()`](#optouttracking)
-* [`hasOptedOutTracking()`](#hasoptedouttracking)
-* [Interfaces](#interfaces)
+- [Maintainers](#maintainers)
+- [Install](#install)
+- [API](#api)
+  - [initialize(...)](#initialize)
+  - [distinctId()](#distinctid)
+  - [track(...)](#track)
+  - [identify(...)](#identify)
+  - [alias(...)](#alias)
+  - [reset()](#reset)
+  - [clearSuperProperties()](#clearsuperproperties)
+  - [currentSuperProperties()](#currentsuperproperties)
+  - [registerSuperProperties(...)](#registersuperproperties)
+  - [setProfile(...)](#setprofile)
+  - [setProfileUnion(...)](#setprofileunion)
+  - [deleteProfile()](#deleteprofile)
+  - [trackCharge(...)](#trackcharge)
+  - [flush()](#flush)
+  - [optInTracking(...)](#optintracking)
+  - [optOutTracking()](#optouttracking)
+  - [hasOptedOutTracking()](#hasoptedouttracking)
+  - [Interfaces](#interfaces)
+    - [InitializeOptions](#initializeoptions)
+    - [TrackOptions](#trackoptions)
+    - [TrackProperties](#trackproperties)
+    - [IdentifyOptions](#identifyoptions)
+    - [AliasOptions](#aliasoptions)
+    - [SuperPropertyOptions](#superpropertyoptions)
+    - [ProfileProperties](#profileproperties)
+    - [ChargeOptions](#chargeoptions)
+    - [OptInOptions](#optinoptions)
+- [Contributors](#contributors)
 
 </docgen-index>
 
@@ -360,3 +395,26 @@ Returns the current opt-out status.
 | **`properties`** | <code>any</code>    | An associative array of properties to store about the user |
 
 </docgen-api>
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mileszim"><img src="https://avatars.githubusercontent.com/u/1849508?v=4?s=75" width="75px;" alt="Miles Zimmerman"/><br /><sub><b>Miles Zimmerman</b></sub></a><br /><a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=mileszim" title="Code">💻</a> <a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=mileszim" title="Documentation">📖</a> <a href="#maintenance-mileszim" title="Maintenance">🚧</a> <a href="#example-mileszim" title="Examples">💡</a> <a href="#platform-mileszim" title="Packaging/porting to new platform">📦</a> <a href="#plugin-mileszim" title="Plugin/utility libraries">🔌</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://soundtrackcentral.com/"><img src="https://avatars.githubusercontent.com/u/6739666?v=4?s=75" width="75px;" alt="Adam C"/><br /><sub><b>Adam C</b></sub></a><br /><a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=tetsuwanadam" title="Code">💻</a> <a href="https://github.com/houseninjadojo/capacitor-mixpanel/commits?author=tetsuwanadam" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

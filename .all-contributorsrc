@@ -1,0 +1,40 @@
+{
+  "projectName": "capacitor-mixpanel",
+  "projectOwner": "houseninjadojo",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 75,
+  "commit": true,
+  "commitConvention": "angular",
+  "badgeTemplate": "<a href=\"#contributors\"><img src=\"https://img.shields.io/badge/all%20contributors-<%= contributors.length %>-orange?style=flat-square\" /></a>",
+  "contributors": [
+    {
+      "login": "mileszim",
+      "name": "Miles Zimmerman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1849508?v=4",
+      "profile": "https://github.com/mileszim",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance",
+        "example",
+        "platform",
+        "plugin"
+      ]
+    },
+    {
+      "login": "tetsuwanadam",
+      "name": "Adam C",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6739666?v=4",
+      "profile": "http://soundtrackcentral.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
