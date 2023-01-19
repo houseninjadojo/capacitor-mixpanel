@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v2.0.0...capacitor-mixpanel-v2.1.0) (2023-01-19)
+
+
+### Features
+
+* add hasOptedOutTracking, ios ip collection settings and fix missing ios methods ([#60](https://github.com/houseninjadojo/capacitor-mixpanel/issues/60)) ([863f425](https://github.com/houseninjadojo/capacitor-mixpanel/commit/863f4257b8c4e75c96ee9bcfc848500a4f16aefa))
+
 ## [2.0.0](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v1.1.0...capacitor-mixpanel-v2.0.0) (2022-12-01)
 
 
