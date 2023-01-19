@@ -148,4 +148,12 @@ public class MixpanelPlugin extends Plugin {
         mixpanel.optOutTracking();
         call.resolve();
     }
+
+    @PluginMethod
+    public void hasOptedOutTracking(PluginCall call) {
+        boolean hasOptedOut = mixpanel.hasOptedOutTracking();
+        JSObject ret = new JSObject();
+        ret.put("value", hasOptedOut);
+        call.resolve(ret);
+    }
 }

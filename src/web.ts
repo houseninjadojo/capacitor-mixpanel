@@ -22,11 +22,13 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
     autotrack?: boolean;
     optOutByDefault?: boolean;
     debug?: boolean;
+    ipCollection?: boolean;
   }): Promise<void> {
     mixpanel.init(options.token, {
       autotrack: options.autotrack ?? true,
       opt_out_tracking_by_default: options.optOutByDefault ?? false,
       debug: options.debug ?? false,
+      ip: options.ipCollection ?? true,
     });
     return Promise.resolve();
   }
@@ -102,5 +104,9 @@ export class MixpanelWeb extends WebPlugin implements MixpanelPlugin {
 
   async optOutTracking(): Promise<void> {
     mixpanel.opt_out_tracking();
+  }
+
+  async hasOptedOutTracking(): Promise<{ value: boolean }> {
+    return { value: mixpanel.has_opted_out_tracking() };
   }
 }

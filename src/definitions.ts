@@ -226,6 +226,13 @@ export interface MixpanelPlugin {
    * @platforms ios, android, web
    */
   optOutTracking(): Promise<void>;
+
+  /**
+   * Returns the current opt-out status.
+   *
+   * @platforms ios, android, web
+   */
+  hasOptedOutTracking(): Promise<{ value: boolean }>;
 }
 
 declare module '@capacitor/cli' {
@@ -253,6 +260,15 @@ declare module '@capacitor/cli' {
        * @default false
        */
       optOutTrackingByDefault?: boolean;
+
+      /**
+       * Optional. Disables ip collection on iOS devices. Default is false.
+       * For Android, this is done via a meta-data property. See {@link https://help.mixpanel.com/hc/en-us/articles/115004494803}
+       *
+       * @required
+       * @default false
+       */
+      disableIosIpCollection?: boolean;
 
       /**
        * Optional. Mixpanel cluster URL or EU server URL. Defaults to US server.

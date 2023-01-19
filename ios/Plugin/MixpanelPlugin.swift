@@ -13,13 +13,15 @@ public class MixpanelPlugin: CAPPlugin {
         let serverURL = getConfig().getString("serverUrl", "https://api.mixpanel.com")
         let optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false)
         let trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true)
+        let disableIpCollection = getConfig().getBoolean("disableIosIpCollection", false)
 
-        Mixpanel.initialize(
+        let instance = Mixpanel.initialize(
             token: token,
             trackAutomaticEvents: trackAutomaticEvents,
             optOutTrackingByDefault: optOutTrackingByDefault,
             serverURL: serverURL
         )
+        instance.useIPAddressForGeoLocation = !disableIpCollection
     }
 
     @objc func initialize(_ call: CAPPluginCall) {
@@ -108,10 +110,8 @@ public class MixpanelPlugin: CAPPlugin {
     }
 
     @objc func optInTracking(_ call: CAPPluginCall) {
-        let distinctId: String = call.getString("distinctId")!
-        guard let properties = call.getObject("properties") as? Properties else {
-            return
-        }
+        let distinctId = call.getString("distinctId")
+        let properties = call.getObject("properties") as? Properties
         Mixpanel.mainInstance().optInTracking(distinctId: distinctId, properties: properties)
         call.resolve()
     }
@@ -119,5 +119,10 @@ public class MixpanelPlugin: CAPPlugin {
     @objc func optOutTracking(_ call: CAPPluginCall) {
         Mixpanel.mainInstance().optOutTracking()
         call.resolve()
+    }
+    
+    @objc func hasOptedOutTracking(_ call: CAPPluginCall) {
+        let hasOptedOut = Mixpanel.mainInstance().hasOptedOutTracking()
+        call.resolve([ "value": hasOptedOut ]);
     }
 }
