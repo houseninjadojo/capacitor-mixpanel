@@ -244,7 +244,7 @@ declare module '@capacitor/cli' {
        * @required
        * @example "asdf1234asdf1234"
        */
-      token: string;
+      token?: string;
 
       /**
        * Optional. Whether or not to collect common mobile events. Default is true.
