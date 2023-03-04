@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.1](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v2.1.0...capacitor-mixpanel-v2.1.1) (2023-03-04)
+
+
+### Bug Fixes
+
+* **types:** make token optional in typescript ([#105](https://github.com/houseninjadojo/capacitor-mixpanel/issues/105)) ([73b183a](https://github.com/houseninjadojo/capacitor-mixpanel/commit/73b183a12ed6e1c78ea976b6c2090dc0fc491df0))
+
 ## [2.1.0](https://github.com/houseninjadojo/capacitor-mixpanel/compare/capacitor-mixpanel-v2.0.0...capacitor-mixpanel-v2.1.0) (2023-01-19)
 
 
