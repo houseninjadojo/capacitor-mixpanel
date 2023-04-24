@@ -147,7 +147,7 @@
     debug "^4.0.0"
     tslib "^2.0.1"
 
-"@ionic/utils-fs@3.1.6", "@ionic/utils-fs@^3.1.3", "@ionic/utils-fs@^3.1.5", "@ionic/utils-fs@^3.1.6":
+"@ionic/utils-fs@3.1.6", "@ionic/utils-fs@^3.1.5", "@ionic/utils-fs@^3.1.6":
   version "3.1.6"
   resolved "https://registry.npmjs.org/@ionic/utils-fs/-/utils-fs-3.1.6.tgz"
   integrity sha512-eikrNkK89CfGPmexjTfSWl4EYqsPSBh0Ka7by4F0PLc1hJZYtJxUZV3X4r5ecA8ikjicUmcbU7zJmAjmqutG/w==
@@ -185,7 +185,7 @@
     debug "^4.0.0"
     tslib "^2.0.1"
 
-"@ionic/utils-subprocess@^2.1.11", "@ionic/utils-subprocess@^2.1.3":
+"@ionic/utils-subprocess@2.1.11", "@ionic/utils-subprocess@^2.1.11":
   version "2.1.11"
   resolved "https://registry.npmjs.org/@ionic/utils-subprocess/-/utils-subprocess-2.1.11.tgz"
   integrity sha512-6zCDixNmZCbMCy5np8klSxOZF85kuDyzZSTTQKQP90ZtYNCcPYmuFSzaqDwApJT4r5L3MY3JrqK1gLkc6xiUPw==
@@ -2157,12 +2157,12 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 swiftlint@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/swiftlint/-/swiftlint-1.0.1.tgz"
-  integrity sha512-HV/fCJTpwgCeoMw5W21J5PnhXSAVg2dtgTPrAbHqFZR1dDHEdEiM7tObw/w+CEGW/68xwWWTgKfyyvyY/6uUxA==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/swiftlint/-/swiftlint-1.0.2.tgz#11586c3e9b4f21c62c938f6821d3052c447956f0"
+  integrity sha512-YhcS0N3vkwBatnZf/iJPg89LGQk7MbFnz67Cg3EZ6Ppqm2H8y6x7A1t6KMQ0jYVQpea9wQiFiFRFhkoChaQ29Q==
   dependencies:
-    "@ionic/utils-fs" "^3.1.3"
-    "@ionic/utils-subprocess" "^2.1.3"
+    "@ionic/utils-fs" "3.1.6"
+    "@ionic/utils-subprocess" "2.1.11"
     cosmiconfig "^6.0.0"
 
 table@^6.0.9:
