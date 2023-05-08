@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@capacitor/android": "^4.5.0",
-    "@capacitor/cli": "^4.5.0",
+    "@capacitor/cli": "^5.0.1",
     "@capacitor/core": "^4.5.0",
     "@capacitor/docgen": "^0.2.0",
     "@capacitor/ios": "^4.5.0",
