@@ -77,9 +77,9 @@
     typescript "~4.2.4"
 
 "@capacitor/ios@^4.5.0":
-  version "4.7.3"
-  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-4.7.3.tgz#4e4f675afc8a12f458d397bb6cd333a6eb2be183"
-  integrity sha512-CXVvEzg9WWyhGdLSZsWfa69RyNlKH03g4OKpWh9OW0A7uL4aYA8Z7m4jE4mCu/2TTWDEgUPp0BrWEDPaj73eow==
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-4.8.0.tgz#b6db0092bdacb1404488447e927c098a9c7e3b12"
+  integrity sha512-FbEXFzZIe5EGZNKpGxHNUEGKjcKK0XY45P3QXLoJPF3fEndW96ThLZOy3rHjt436sTu41NubFpPyIzyyy1YgMA==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
