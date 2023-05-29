@@ -36,9 +36,9 @@
   integrity sha512-VFKEWZ7dDExcGnsEz+5euFV6eyEsNZt2WR/rbeE3NXW/1FQZhM5qtqXxGwSUpFkhhlyP1KE0NJoC9EWmHEi+ug==
 
 "@capacitor/cli@^5.0.1":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-5.0.3.tgz#5f0549f4b731bc999cafd1b9dc89925bbd51ac13"
-  integrity sha512-VPmd/uKSCYqeLgNTrG2wVaMoCX8lo2UuXFVwP54W4nXPyG6LsDuOKYytkBItTAJrI3KEXdZWyRFbXjIY48/m6g==
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-5.0.4.tgz#f8d31f32262e457b2a8e31f76295c15b5c6f57b8"
+  integrity sha512-ALzAZlU1L0lwrxtBcvYeu6tFt5i3cLglQdsbohGLqAhipMWW/QNuafIJshxMMR8lMeBAEVYizdDOxEUFHcnWOQ==
   dependencies:
     "@ionic/cli-framework-output" "^2.2.5"
     "@ionic/utils-fs" "^3.1.6"
