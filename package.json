@@ -54,7 +54,7 @@
     "@capacitor/docgen": "^0.2.0",
     "@capacitor/ios": "^4.5.0",
     "@ionic/eslint-config": "^0.3.0",
-    "@ionic/prettier-config": "^2.0.0",
+    "@ionic/prettier-config": "^3.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
     "@types/mixpanel-browser": "^2.38.0",
     "all-contributors-cli": "^6.24.0",
