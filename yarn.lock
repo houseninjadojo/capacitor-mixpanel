@@ -1978,10 +1978,10 @@ rimraf@^4.3.1, rimraf@^4.4.1:
   dependencies:
     glob "^9.2.0"
 
-rollup@^2.32.0:
-  version "2.70.1"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-2.70.1.tgz"
-  integrity sha512-CRYsI5EuzLbXdxC6RnYhOuRdtz4bhejPMSWjsFLfVM/7w/85n2szZv6yExqUXsBdz5KT8eoubeyDUDjhLHEslA==
+rollup@^3.27.0:
+  version "3.27.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.27.0.tgz#15bd07e2e1cbfa9255bf6a3f04a432621c2f3550"
+  integrity sha512-aOltLCrYZ0FhJDm7fCqwTjIUEVjWjcydKBV/Zeid6Mn8BWgDCUBBWT5beM5ieForYNo/1ZHuGJdka26kvQ3Gzg==
   optionalDependencies:
     fsevents "~2.3.2"
 
