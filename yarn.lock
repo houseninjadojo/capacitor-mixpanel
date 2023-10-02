@@ -36,9 +36,9 @@
   integrity sha512-nOltfBbMyMMukFj8p5FMcHmtw8UF5uyXS8T1P5HKuU/eFrazeDWK+4494Rc9jLhSg/kam5886AJUPZ9UESHCqw==
 
 "@capacitor/cli@^5.0.1":
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-5.2.3.tgz#e28f8a21079a0ed28c6d5ec1d926d32e584f815c"
-  integrity sha512-iqjOnA9fCxm+cFv5iTvxb/vElK2Z1kDpVS+N9XyD2Msyv3l3ezuOZTSvABiDoo6w6CGkj4/AUMpdT4nrZkTHTg==
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-5.4.1.tgz#b9efcb1587861009ce484234883b0eea01b4abaa"
+  integrity sha512-Smwn38zrTRzPDGBpcoysgL40t34pu/wPbaq6s8HYPJgjutAAO/AsO/OeNA6aY+J+lgqXreBw7NwWfC4FsbqMMA==
   dependencies:
     "@ionic/cli-framework-output" "^2.2.5"
     "@ionic/utils-fs" "^3.1.6"
@@ -48,7 +48,7 @@
     debug "^4.3.4"
     env-paths "^2.2.0"
     kleur "^4.1.4"
-    native-run "^1.7.2"
+    native-run "^1.7.3"
     open "^8.4.0"
     plist "^3.0.5"
     prompts "^2.4.2"
@@ -1632,10 +1632,10 @@ mute-stream@0.0.8:
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.8.tgz"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-native-run@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/native-run/-/native-run-1.7.2.tgz#42ee36102039c2a892507bbc1cb75695f676098b"
-  integrity sha512-2aahC8iXIO8BcvEukVMrYwL5sXurkuIGyQgfSGBto832W6ejV+cB5Ww+2/CRxmyozhbxARJ2OMpEGPV8sTqsrQ==
+native-run@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/native-run/-/native-run-1.7.3.tgz#892b95ee77a99c679f530719c73f58c1a46b1a8d"
+  integrity sha512-vEw8X3Yu8TAbP4/uCJV3nCsCrhfHgUecRRDc69ZU9EK0QXHHc7YDzmIeI7SfA08ywzPlC9YcpITcB6bgMbrtwQ==
   dependencies:
     "@ionic/utils-fs" "^3.1.6"
     "@ionic/utils-terminal" "^2.3.3"
