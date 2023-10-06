@@ -25,6 +25,12 @@ export interface InitializeOptions {
    * @default false
    */
   debug?: boolean;
+  /**
+   * Enable or disable debug mode
+   *
+   * @default false
+   */
+  serverURL?: string;
 }
 
 export interface TrackOptions {
