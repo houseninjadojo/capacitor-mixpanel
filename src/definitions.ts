@@ -175,11 +175,25 @@ export interface MixpanelPlugin {
   registerSuperProperties(options: SuperPropertyOptions): Promise<void>;
 
   /**
+   * Register super properties that will be sent with event only if no other super property with the same names has already been registered..
+   *
+   * @platforms ios, android, web
+   */
+  registerSuperPropertiesOnce(options: SuperPropertyOptions): Promise<void>;
+
+  /**
    * Set properties on the current user in Mixpanel People.
    *
    * @platforms ios, android, web
    */
   setProfile(options: ProfileProperties): Promise<void>;
+
+  /**
+   * Set properties on the current user in Mixpanel People ensuring no pre-existing properties are overwritten.
+   *
+   * @platforms ios, android, web
+   */
+  setProfileOnce(options: ProfileProperties): Promise<void>;
 
   /**
    * Union list properties.
@@ -194,6 +208,13 @@ export interface MixpanelPlugin {
    * @platforms ios, android, web
    */
   deleteProfile(): Promise<void>;
+
+  /**
+   * Increment properties by provided values for the current user in Mixpanel People.
+   *
+   * @platforms ios, android, web
+   */
+  incrementProfile(options: ProfileProperties): Promise<void>;
 
   /**
    * Track money spent by the current user for revenue analytics and associate properties with the charge. Properties is optional.

@@ -1,5 +1,7 @@
 package co.houseninja.plugins.mixpanel;
 
+import java.util.Map;
+import java.util.HashMap;
 import android.util.Log;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -10,6 +12,8 @@ import com.mixpanel.android.mpmetrics.MixpanelAPI;
 import java.util.Iterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONException;
+
 
 @CapacitorPlugin(name = "Mixpanel")
 public class MixpanelPlugin extends Plugin {
@@ -97,9 +101,23 @@ public class MixpanelPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void registerSuperPropertiesOnce(PluginCall call) {
+        JSObject properties = call.getObject("properties");
+        mixpanel.registerSuperPropertiesOnce(properties);
+        call.resolve();
+    }
+
+    @PluginMethod
     public void setProfile(PluginCall call) {
         JSObject properties = call.getObject("properties");
         mixpanel.getPeople().set(properties);
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void setProfileOnce(PluginCall call) {
+        JSObject properties = call.getObject("properties");
+        mixpanel.getPeople().setOnce(properties);
         call.resolve();
     }
 
@@ -118,6 +136,17 @@ public class MixpanelPlugin extends Plugin {
     @PluginMethod
     public void deleteProfile(PluginCall call) {
         mixpanel.getPeople().deleteUser();
+        call.resolve();
+    }
+
+    @PluginMethod
+    public void incrementProfile(PluginCall call) {
+        JSObject properties = call.getObject("properties");
+        try {
+            mixpanel.getPeople().increment(convertJsObjectToMap(properties));
+        } catch (JSONException e) {
+            call.reject("invalid params: " + e.getMessage());
+        }
         call.resolve();
     }
 
@@ -155,5 +184,18 @@ public class MixpanelPlugin extends Plugin {
         JSObject ret = new JSObject();
         ret.put("value", hasOptedOut);
         call.resolve(ret);
+    }
+
+    private Map<String, Number> convertJsObjectToMap(JSObject jsObject) throws JSONException {
+        Map<String, Number> map = new HashMap<>();
+
+        Iterator<String> keys = jsObject.keys();
+        while (keys.hasNext()) {
+            String key = keys.next();
+            Number value = (Number) jsObject.get(key);
+            map.put(key, value);
+        }
+
+        return map;
     }
 }

@@ -78,11 +78,27 @@ public class MixpanelPlugin: CAPPlugin {
         call.resolve()
     }
 
+    @objc func registerSuperPropertiesOnce(_ call: CAPPluginCall) {
+        guard let properties = call.getObject("properties") as? Properties else {
+            return
+        }
+        Mixpanel.mainInstance().registerSuperPropertiesOnce(properties)
+        call.resolve()
+    }
+
     @objc func setProfile(_ call: CAPPluginCall) {
         guard let properties = call.getObject("properties") as? Properties else {
             return
         }
         Mixpanel.mainInstance().people.set(properties: properties)
+        call.resolve()
+    }
+
+    @objc func setProfileOnce(_ call: CAPPluginCall) {
+        guard let properties = call.getObject("properties") as? Properties else {
+            return
+        }
+        Mixpanel.mainInstance().people.setOnce(properties: properties)
         call.resolve()
     }
 
@@ -96,6 +112,14 @@ public class MixpanelPlugin: CAPPlugin {
 
     @objc func deleteProfile(_ call: CAPPluginCall) {
         Mixpanel.mainInstance().people.deleteUser()
+        call.resolve()
+    }
+
+    @objc func incrementProfile(_ call: CAPPluginCall) {
+        guard let properties = call.getObject("properties") as? Properties else {
+            return
+        }
+        Mixpanel.mainInstance().people.increment(properties: properties)
         call.resolve()
     }
 

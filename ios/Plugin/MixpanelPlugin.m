@@ -13,9 +13,12 @@ CAP_PLUGIN(MixpanelPlugin, "Mixpanel",
            CAP_PLUGIN_METHOD(clearSuperProperties, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(currentSuperProperties, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(registerSuperProperties, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(registerSuperPropertiesOnce, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(setProfile, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setProfileOnce, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(setProfileUnion, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(deleteProfile, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(incrementProfile, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(trackCharge, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(flush, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(optInTracking, CAPPluginReturnPromise);
