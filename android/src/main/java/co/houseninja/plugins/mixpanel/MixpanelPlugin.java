@@ -23,9 +23,11 @@ public class MixpanelPlugin extends Plugin {
         boolean trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true);
         boolean optOutTrackingByDefault = getConfig().getBoolean("optOutTrackingByDefault", false);
 
-        mixpanel = MixpanelAPI.getInstance(getContext(), token, optOutTrackingByDefault, trackAutomaticEvents);
+        if (token != null) {
+            mixpanel = MixpanelAPI.getInstance(getContext(), token, optOutTrackingByDefault, trackAutomaticEvents);
+        }
 
-        if (serverUrl != null) {
+        if (serverUrl != null && mixpanel != null) {
             mixpanel.setServerURL(serverUrl);
         }
 
@@ -35,7 +37,18 @@ public class MixpanelPlugin extends Plugin {
 
     @PluginMethod
     public void initialize(PluginCall call) {
-        call.unimplemented("Not implemented on Android. Mixpanel is initialized automatically.");
+        String token = call.getString("token");
+        String serverUrl = call.getString("serverUrl", "https://api.mixpanel.com");
+        boolean trackAutomaticEvents = call.getBoolean("trackAutomaticEvents", true);
+        boolean optOutTrackingByDefault = call.getBoolean("optOutTrackingByDefault", false);
+
+        mixpanel = MixpanelAPI.getInstance(getContext(), token, optOutTrackingByDefault, trackAutomaticEvents);
+
+        if (serverUrl != null && mixpanel != null) {
+            mixpanel.setServerURL(serverUrl);
+        }
+
+        call.resolve();
     }
 
     @PluginMethod

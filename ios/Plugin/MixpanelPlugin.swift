@@ -15,6 +15,24 @@ public class MixpanelPlugin: CAPPlugin {
         let trackAutomaticEvents = getConfig().getBoolean("trackAutomaticEvents", true)
         let disableIpCollection = getConfig().getBoolean("disableIosIpCollection", false)
 
+        if (token != "MIXPANEL_TOKEN_REQUIRED") {
+            let instance = Mixpanel.initialize(
+                token: token,
+                trackAutomaticEvents: trackAutomaticEvents,
+                optOutTrackingByDefault: optOutTrackingByDefault,
+                serverURL: serverURL
+            )
+            instance.useIPAddressForGeoLocation = !disableIpCollection
+        }
+    }
+
+    @objc func initialize(_ call: CAPPluginCall) {
+        let token = call.getString("token") ?? "MIXPANEL_TOKEN_REQUIRED"
+        let serverURL = call.getString("serverUrl", "https://api.mixpanel.com")
+        let optOutTrackingByDefault = call.getBool("optOutTrackingByDefault", false)
+        let trackAutomaticEvents = call.getBool("trackAutomaticEvents", true)
+        let disableIpCollection = call.getBool("disableIosIpCollection", false)
+
         let instance = Mixpanel.initialize(
             token: token,
             trackAutomaticEvents: trackAutomaticEvents,
@@ -22,10 +40,8 @@ public class MixpanelPlugin: CAPPlugin {
             serverURL: serverURL
         )
         instance.useIPAddressForGeoLocation = !disableIpCollection
-    }
 
-    @objc func initialize(_ call: CAPPluginCall) {
-        call.unimplemented("Not implemented on iOS. Mixpanel is initialized automatically.")
+        call.resolve()
     }
 
     @objc func distinctId(_ call: CAPPluginCall) {
