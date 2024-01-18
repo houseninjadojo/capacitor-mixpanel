@@ -45,7 +45,8 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
     "contributors:add": "all-contributors add",
-    "contributors:gen": "all-contributors generate"
+    "contributors:gen": "all-contributors generate",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@capacitor/android": "^5.0.0",
