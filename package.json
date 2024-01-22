@@ -62,7 +62,7 @@
     "prettier": "~2.8.3",
     "prettier-plugin-java": "~2.1.0",
     "rimraf": "^4.3.1",
-    "rollup": "^2.32.0",
+    "rollup": "^4.9.6",
     "swiftlint": "^1.0.1",
     "typescript": "~5.0.4"
   },
