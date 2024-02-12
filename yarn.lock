@@ -66,9 +66,9 @@
     tslib "^2.1.0"
 
 "@capacitor/docgen@^0.2.0":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/docgen/-/docgen-0.2.1.tgz#ed9400bd983b56496b7664dd8858e1a4d0c27eaf"
-  integrity sha512-COS5teC6n+EOSaBS7voHnIeIKH7owALnVoI1AhVArIWtBrc1JxSgkUuvLHpti4VGZdXdsrtp4yBPUwGm8WOZKA==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/docgen/-/docgen-0.2.2.tgz#c87e325d348c70b9af58f5a79bde767c544be120"
+  integrity sha512-617jB5DlKjUljxfoANORWeqffsHqHekckH48oslKWFGzfCHYIAEPfJfMa5M4mVSzn2ifSvWB5C3st4augwhl5w==
   dependencies:
     "@types/node" "^14.18.0"
     colorette "^2.0.16"
