@@ -278,9 +278,9 @@
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
 "@types/mixpanel-browser@^2.38.0":
-  version "2.38.1"
-  resolved "https://registry.yarnpkg.com/@types/mixpanel-browser/-/mixpanel-browser-2.38.1.tgz#914cc726194cc0358129b6d84657f078e47f7697"
-  integrity sha512-XzQbwgiOPsFXUQnjz3vSwcwrvJDbQ35bCiwa/1VXGrHvU1ti9+eqO1GY91DShzkEzKkkEEkxfNshS5dbBZqd7w==
+  version "2.49.0"
+  resolved "https://registry.yarnpkg.com/@types/mixpanel-browser/-/mixpanel-browser-2.49.0.tgz#ad92ecc36fad63b9c0aed80b6283d86dbf52e49e"
+  integrity sha512-StmgUnS58d44DmIAEX9Kk8qwisAYCl6E2qulIjYyHXUPuJCPOuyUMTTKBp+aU2F2do+kxAzCxiBtsB4fnBT9Fg==
 
 "@types/node@*", "@types/node@^14.18.0":
   version "14.18.34"
@@ -1638,9 +1638,9 @@ minizlib@^2.1.1:
     yallist "^4.0.0"
 
 mixpanel-browser@^2.45.0:
-  version "2.45.0"
-  resolved "https://registry.npmjs.org/mixpanel-browser/-/mixpanel-browser-2.45.0.tgz"
-  integrity sha512-PQ1DaTk68yyYtLA0iejmzPA9iNDhT4uIZpqZjRTw7HWpYfl123fydHb2laKanaKjm8YDmrGGz3+xZ4Q6joogyg==
+  version "2.49.0"
+  resolved "https://registry.yarnpkg.com/mixpanel-browser/-/mixpanel-browser-2.49.0.tgz#de3f4f2d0f3a32b4babf6d827ef983a9fd48a711"
+  integrity sha512-RZJCO7XXuuHBAWG5fd9Mavz994M7v7W3Qiaq8NzmN631pa4BQ0vNZQtRFqKcCCOBn4xqOZbX2GkuC7ZkQoL4cQ==
 
 mkdirp@^1.0.3:
   version "1.0.4"
