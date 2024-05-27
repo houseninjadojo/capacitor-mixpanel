@@ -59,9 +59,9 @@
     xml2js "^0.5.0"
 
 "@capacitor/core@^4.5.0":
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-4.8.1.tgz#6fac7ed09c8e1296cf3a5821356972b84736d1c8"
-  integrity sha512-GIUGw1P2Iyh4jb8ZAIWRPtR2zH6ARcpwN5pn/vmIJiTujQBMQmF62s5L3m4XMQSVKlbw8iCPi/YKjlUL+EjKhA==
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-4.8.2.tgz#1f44eeed4c8c2d54d22810fb02170dd245df8fdf"
+  integrity sha512-lrDvHyQu3LWWWXkCkHATY8D3GCBIWyqnmQUiGxlTJfu9BEdmfflq+OZuDKIy4H+KYChaXM1QnymNIuWrDFXgXw==
   dependencies:
     tslib "^2.1.0"
 
