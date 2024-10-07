@@ -134,10 +134,10 @@
   resolved "https://registry.yarnpkg.com/@ionic/prettier-config/-/prettier-config-4.0.0.tgz#32bcc3a536e785cc5be8e3c4d429a6f7bcb7b1fe"
   integrity sha512-0DqL6CggVdgeJAWOLPUT73rF1VD5p0tVlCpC5GXz5vTIUBxNwsJ5085Q7wXjKiE5Odx3aOHGTcuRWCawFsLFag==
 
-"@ionic/swiftlint-config@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/@ionic/swiftlint-config/-/swiftlint-config-1.1.2.tgz"
-  integrity sha512-UbE1AIlTowt9uR7fMzRtbQX4URcyuok7mcpdJfFDHAIGM6nDjohYMke+6xOr6ZYlLnEyVmBGNEg0+grEYRgcVg==
+"@ionic/swiftlint-config@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ionic/swiftlint-config/-/swiftlint-config-2.0.0.tgz#2475d67d235512f3d4ee3794bbbdf10e342a8c41"
+  integrity sha512-TXy76ALSKhUZzBziHz7aoEtSQwHofBIDRNzM9x4sndtC7fefbZsBw3UgGwXFTOc7hoj72EAGyqZNUhj9LlhaNQ==
 
 "@ionic/utils-array@2.1.5":
   version "2.1.5"
