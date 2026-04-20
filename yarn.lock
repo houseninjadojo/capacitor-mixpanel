@@ -31,9 +31,9 @@
     regenerator-runtime "^0.13.11"
 
 "@capacitor/android@^4.5.0":
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.8.1.tgz#50223d3f3b35004ce93c185658ec2d11ac2974d3"
-  integrity sha512-nOltfBbMyMMukFj8p5FMcHmtw8UF5uyXS8T1P5HKuU/eFrazeDWK+4494Rc9jLhSg/kam5886AJUPZ9UESHCqw==
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.8.2.tgz#c6b27a149e022c59ab693841e1576f23f4588dc7"
+  integrity sha512-sWMlHJq9F/+TP6BZHoI0ztvt1kon64lu5IiJnqn80g1U/dSJdvYKhPzphwtFWmvzywQcwf25nRnaTAI/coUY+g==
 
 "@capacitor/cli@^5.0.1":
   version "5.6.0"
